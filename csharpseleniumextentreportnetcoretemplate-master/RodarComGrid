@@ -1,0 +1,4 @@
+- baixar o selenium GRID
+- opcao remota
+- http://192.168.1.76:4444/wd/hub - selenium-hub
+- java -Dwebdriver.chrome.driver=C:\Users\base2\Downloads\csharpseleniumextentreportnetcoretemplate-master\CSharpSeleniumLarissaBicalho\bin\Debug\netcoreapp2.1\chromedriver.exe  -jar selenium-server-standalone-3.141.59.jar 

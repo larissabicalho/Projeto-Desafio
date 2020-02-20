@@ -1,0 +1,40 @@
+﻿using CSharpSeleniumLarissaBicalho.Bases;
+using CSharpSeleniumLarissaBicalho.Flows;
+using CSharpSeleniumLarissaBicalho.Pages;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpSeleniumLarissaBicalho.Tests
+{
+    public class MainTests : TestBase
+
+    {
+        #region Pages and Flows Objects
+     
+        MainPage mainPage;
+        #endregion
+
+        [Test]
+        public void fazerLogout()
+        {
+            LoginFlows loginFlows = new LoginFlows();
+
+            mainPage = new MainPage();
+
+            #region Parameters
+            string usuario = "larissa.bicalho";
+            string senha = "lalelu221510";
+            #endregion
+
+            loginFlows.EfetuarLogin(usuario, senha);
+            Assert.AreEqual(usuario, mainPage.RetornaUsernameDasInformacoesDeLogin());
+            mainPage.ClicarEmLogout();
+            Assert.AreEqual("Login", mainPage.VerificarTelaLogin());
+
+
+        }
+
+    }
+}

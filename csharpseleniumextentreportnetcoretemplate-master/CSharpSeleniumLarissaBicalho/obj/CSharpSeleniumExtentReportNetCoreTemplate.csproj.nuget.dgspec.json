@@ -1,0 +1,115 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\lari_\\source\\repos\\csharpseleniumextentreportnetcoretemplate-master\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumExtentReportNetCoreTemplate\\CSharpSeleniumExtentReportNetCoreTemplate.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\lari_\\source\\repos\\csharpseleniumextentreportnetcoretemplate-master\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumExtentReportNetCoreTemplate\\CSharpSeleniumExtentReportNetCoreTemplate.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lari_\\source\\repos\\csharpseleniumextentreportnetcoretemplate-master\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumExtentReportNetCoreTemplate\\CSharpSeleniumExtentReportNetCoreTemplate.csproj",
+        "projectName": "CSharpSeleniumExtentReportNetCoreTemplate",
+        "projectPath": "C:\\Users\\lari_\\source\\repos\\csharpseleniumextentreportnetcoretemplate-master\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumExtentReportNetCoreTemplate\\CSharpSeleniumExtentReportNetCoreTemplate.csproj",
+        "packagesPath": "C:\\Users\\lari_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lari_\\source\\repos\\csharpseleniumextentreportnetcoretemplate-master\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumExtentReportNetCoreTemplate\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lari_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Castle.Core": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "DotNetSeleniumExtras.WaitHelpers": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
+            "ExtentReports.Core": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.0-preview3.19553.2, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[3.1.0-preview3.19553.2, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.0-preview3.19553.2, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.1.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.15.1, )"
+            },
+            "Selenium.Support": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[3.141.0, )"
+            },
+            "Selenium.WebDriver.ChromeDriver": {
+              "target": "Package",
+              "version": "[79.0.3945.3600, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.0-preview3.19551.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
