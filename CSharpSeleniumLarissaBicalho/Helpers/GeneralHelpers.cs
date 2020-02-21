@@ -71,7 +71,7 @@ namespace CSharpSeleniumLarissaBicalho.Helpers
 
         public static string GetProjectBinDebugPath()
         {
-            return GetProjectPath() + "bin//Debug//netcoreapp2.1";
+            return GetProjectPath() + "bin//Debug//netcoreapp3.1";
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]

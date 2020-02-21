@@ -124,7 +124,6 @@ C:\Users\base2\Projeto-Desafio\CSharpSeleniumLarissaBicalho\bin\Debug\netcoreapp
 C:\Users\base2\Projeto-Desafio\CSharpSeleniumLarissaBicalho\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\base2\Projeto-Desafio\CSharpSeleniumLarissaBicalho\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\base2\Projeto-Desafio\CSharpSeleniumLarissaBicalho\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\base2\Projeto-Desafio\CSharpSeleniumLarissaBicalho\obj\Debug\netcoreapp3.1\CSharpSeleniumLarissaBicalho.csprojAssemblyReference.cache
 C:\Users\base2\Projeto-Desafio\CSharpSeleniumLarissaBicalho\obj\Debug\netcoreapp3.1\CSharpSeleniumLarissaBicalho.Queries.UsuariosQueries.resources
 C:\Users\base2\Projeto-Desafio\CSharpSeleniumLarissaBicalho\obj\Debug\netcoreapp3.1\CSharpSeleniumLarissaBicalho.Resources.Resource1.resources
 C:\Users\base2\Projeto-Desafio\CSharpSeleniumLarissaBicalho\obj\Debug\netcoreapp3.1\CSharpSeleniumLarissaBicalho.csproj.GenerateResource.cache
