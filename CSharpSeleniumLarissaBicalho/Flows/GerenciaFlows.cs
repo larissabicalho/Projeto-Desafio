@@ -17,6 +17,10 @@ namespace CSharpSeleniumLarissaBicalho.Flows
 
         }
 
+        /// <summary>
+        /// Metodo que retorna MARCADOR
+        /// </summary>
+        /// <param name="nomeProjeto"></param>
         public void entrarNaPaginaDeGerencia(string nomeProjeto)
         {
             #region Parameters
