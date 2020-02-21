@@ -11,7 +11,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
     {
   
             [Test, TestCaseSource("GetTestData")]
-            public void MyExample_Test(
+            public void criandoUmReport(
              string categoria,
              string frequencia,
              string gravidade,

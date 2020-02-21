@@ -1,8 +1,5 @@
 ﻿using CSharpSeleniumLarissaBicalho.Pages;
-using CSharpSeleniumLarissaBicalho.Flows;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace CSharpSeleniumLarissaBicalho.Flows
 {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\base2\\Projeto-Desafio\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj": {}
+    "C:\\Users\\base2\\Projeto-Desafio\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj": {}
   },
   "projects": {
-    "C:\\Users\\base2\\Projeto-Desafio\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj": {
+    "C:\\Users\\base2\\Projeto-Desafio\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\base2\\Projeto-Desafio\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj",
+        "projectUniqueName": "C:\\Users\\base2\\Projeto-Desafio\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj",
         "projectName": "CSharpSeleniumLarissaBicalho",
-        "projectPath": "C:\\Users\\base2\\Projeto-Desafio\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj",
+        "projectPath": "C:\\Users\\base2\\Projeto-Desafio\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj",
         "packagesPath": "C:\\Users\\base2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\base2\\Projeto-Desafio\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumLarissaBicalho\\obj\\",
+        "outputPath": "C:\\Users\\base2\\Projeto-Desafio\\CSharpSeleniumLarissaBicalho\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\base2\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,8 +85,10 @@
               "version": "[3.12.0, )"
             },
             "NUnit3TestAdapter": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.15.1, )"
+              "version": "[3.16.1, )"
             },
             "Selenium.Firefox.WebDriver": {
               "target": "Package",

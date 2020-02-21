@@ -24,6 +24,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
         #region Lost Password
 
         By linkLostPassoword = By.LinkText("Lost your password?");
+
         #endregion
 
         #endregion

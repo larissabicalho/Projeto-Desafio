@@ -242,7 +242,7 @@
           "System.Runtime.InteropServices.RuntimeInformation": "4.0.0"
         },
         "compile": {
-          "lib/netstandard1.3/Microsoft.DotNet.InternalAbstractions.dll": {}
+          "lib/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.DotNet.InternalAbstractions.dll": {}
@@ -962,7 +962,7 @@
           "build/NUnit.props": {}
         }
       },
-      "NUnit3TestAdapter/3.15.1": {
+      "NUnit3TestAdapter/3.16.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.DotNet.InternalAbstractions": "1.0.0",
@@ -976,7 +976,7 @@
           "System.Xml.XmlDocument": "4.3.0"
         },
         "build": {
-          "build/netcoreapp2.0/NUnit3TestAdapter.props": {}
+          "build/netcoreapp2.1/NUnit3TestAdapter.props": {}
         }
       },
       "RazorEngine.NetCore/2.2.2": {
@@ -4381,10 +4381,10 @@
         "nunit.nuspec"
       ]
     },
-    "NUnit3TestAdapter/3.15.1": {
-      "sha512": "gqy0llGjhJYq9ebFvtbmBcF/MY8z5kcTIxYs+eXwp2d4Ntha8pSPxUzryvBm7H46VbWI6FS5/XNbxwiQpe88vQ==",
+    "NUnit3TestAdapter/3.16.1": {
+      "sha512": "wKuxi7G9Gs2I9gnckwtMVzbPIy7vkNj+FafrmQPaYCUguT+se5kmzI3XwsVCXEalWk9pSYZW7roBkNu4ogn3DA==",
       "type": "package",
-      "path": "nunit3testadapter/3.15.1",
+      "path": "nunit3testadapter/3.16.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4394,17 +4394,12 @@
         "build/net35/NUnit3TestAdapter.props",
         "build/net35/nunit.engine.api.dll",
         "build/net35/nunit.engine.dll",
-        "build/netcoreapp1.0/NUnit3.TestAdapter.dll",
-        "build/netcoreapp1.0/NUnit3.TestAdapter.pdb",
-        "build/netcoreapp1.0/NUnit3TestAdapter.props",
-        "build/netcoreapp1.0/nunit.engine.api.dll",
-        "build/netcoreapp1.0/nunit.engine.dll",
-        "build/netcoreapp2.0/NUnit3.TestAdapter.dll",
-        "build/netcoreapp2.0/NUnit3.TestAdapter.pdb",
-        "build/netcoreapp2.0/NUnit3TestAdapter.props",
-        "build/netcoreapp2.0/nunit.engine.api.dll",
-        "build/netcoreapp2.0/nunit.engine.dll",
-        "nunit3testadapter.3.15.1.nupkg.sha512",
+        "build/netcoreapp2.1/NUnit3.TestAdapter.dll",
+        "build/netcoreapp2.1/NUnit3.TestAdapter.pdb",
+        "build/netcoreapp2.1/NUnit3TestAdapter.props",
+        "build/netcoreapp2.1/nunit.engine.api.dll",
+        "build/netcoreapp2.1/nunit.engine.dll",
+        "nunit3testadapter.3.16.1.nupkg.sha512",
         "nunit3testadapter.nuspec"
       ]
     },
@@ -9429,7 +9424,7 @@
       "Microsoft.NET.Test.Sdk >= 16.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
       "NUnit >= 3.12.0",
-      "NUnit3TestAdapter >= 3.15.1",
+      "NUnit3TestAdapter >= 3.16.1",
       "Selenium.Firefox.WebDriver >= 0.26.0",
       "Selenium.Support >= 3.8.0",
       "Selenium.WebDriver >= 3.141.0",
@@ -9444,11 +9439,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\base2\\Projeto-Desafio\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj",
+      "projectUniqueName": "C:\\Users\\base2\\Projeto-Desafio\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj",
       "projectName": "CSharpSeleniumLarissaBicalho",
-      "projectPath": "C:\\Users\\base2\\Projeto-Desafio\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj",
+      "projectPath": "C:\\Users\\base2\\Projeto-Desafio\\CSharpSeleniumLarissaBicalho\\CSharpSeleniumLarissaBicalho.csproj",
       "packagesPath": "C:\\Users\\base2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\base2\\Projeto-Desafio\\csharpseleniumextentreportnetcoretemplate-master\\CSharpSeleniumLarissaBicalho\\obj\\",
+      "outputPath": "C:\\Users\\base2\\Projeto-Desafio\\CSharpSeleniumLarissaBicalho\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\base2\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9522,8 +9517,10 @@
             "version": "[3.12.0, )"
           },
           "NUnit3TestAdapter": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
-            "version": "[3.15.1, )"
+            "version": "[3.16.1, )"
           },
           "Selenium.Firefox.WebDriver": {
             "target": "Package",
