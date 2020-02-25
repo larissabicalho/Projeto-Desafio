@@ -40,7 +40,8 @@ namespace CSharpSeleniumLarissaBicalho.Pages
         By rdeditarPerfil = By.XPath("//input[@value='edit']");
         By rdapagarPerfil = By.XPath("//input[@value='delete']");
         By btnEnviarPerfilASerEditado = By.XPath("//input[@value='Enviar']");
-        By btnEditarPerfil = By.XPath("//input[@value='Atualizar Perfil']");              By erroMensagem = By.XPath("/html/body/div[2]/table/tbody/tr[2]/td/p");
+        By btnEditarPerfil = By.XPath("//input[@value='Atualizar Perfil']");
+        By erroMensagem = By.XPath("/html/body/div[2]/table/tbody/tr[2]/td/p");
         By comboSelecionavel = By.Name("profile_id");
         
         #endregion
@@ -85,12 +86,12 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             Click(btnCriarMarcador);
         }
 
-        public void criarMarcador(string nome, string descricao)
+        public string criarMarcador(string nome, string descricao)
         {
             preencherNomeMarcador(nome);
             preencherDescricaoMarcador(descricao);
-            clicarEmCriarMarcador();           
-
+            clicarEmCriarMarcador();
+            return nome;
         }
 
         private By CreateMarcador(string nome)
@@ -218,13 +219,15 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             Click(btnAdicionarPerfil);
         }
 
-        public void adicionarUmPerfilGlobal(string plataforma, string so, string versaoSO, string descricao)
+        public string adicionarUmPerfilGlobal(string plataforma, string so, string versaoSO, string descricao)
         { 
             preencherPlataforma(plataforma);
             preencherSO(so);
             preencherVersaoSO(versaoSO);
             preencherDescricaoAdicional(descricao);
             clicarEmAdicionarPerfil();
+
+            return plataforma + so + versaoSO;
 
         }
 

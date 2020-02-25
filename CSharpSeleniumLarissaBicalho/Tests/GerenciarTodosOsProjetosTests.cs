@@ -2,7 +2,7 @@
 using CSharpSeleniumLarissaBicalho.Pages;
 using CSharpSeleniumLarissaBicalho.Bases;
 using NUnit.Framework;
-
+using CSharpSeleniumLarissaBicalho.Helpers;
 
 namespace CSharpSeleniumLarissaBicalho.Tests
 {
@@ -17,10 +17,11 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             gerenciaFlows = new GerenciaFlows();
             gerenciarTodosOsProjetos = new GerenciarTodososProjetosPage();
 
+            string categoria = "TesteLarissa" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
 
             gerenciaFlows.entrarNaPaginaDeGerencia("Todos os Projetos");
-            gerenciarTodosOsProjetos.adicionarCategoria("TesteLarissa");
-            Assert.IsTrue(gerenciarTodosOsProjetos.acharCategoriaSelecionada("TesteLarissa"));
+            gerenciarTodosOsProjetos.adicionarCategoria(categoria);
+            Assert.IsTrue(gerenciarTodosOsProjetos.acharCategoriaSelecionada(categoria));
         }
 
         [Test, Order(2)]
@@ -35,11 +36,19 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             gerenciaFlows.entrarNaPaginaDeGerencia("Todos os Projetos");
 
             gerenciarTodosOsProjetos.clicarEmGerenciarProjetos();
-            gerenciarTodosOsProjetos.ClicarEmAlterarCategoria("TesteLarissa");
-            gerenciarTodosOsProjetos.editarCategoria("TesteCat", "larissa.bicalho");
+
+            string categoria = "TesteLarissa" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+
+            string categoriaAdicionada = gerenciarTodosOsProjetos.adicionarCategoria(categoria);
+
+            gerenciarTodosOsProjetos.ClicarEmAlterarCategoria(categoriaAdicionada);
+
+            string categoriaEditada = "TesteLarissa" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+
+            gerenciarTodosOsProjetos.editarCategoria(categoriaEditada, "larissa.bicalho");
            
             
-            Assert.IsTrue(gerenciarTodosOsProjetos.acharCategoriaSelecionada("TesteCat"));
+            Assert.IsTrue(gerenciarTodosOsProjetos.acharCategoriaSelecionada(categoriaEditada));
 
         }
 
@@ -55,10 +64,15 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 
             gerenciarTodosOsProjetos.clicarEmGerenciarProjetos();
 
-            gerenciarTodosOsProjetos.ClicarEmDeletarCategoria("TesteCat");
+            string categoria = "TesteLarissa" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+
+            string categoriaAdicionada = gerenciarTodosOsProjetos.adicionarCategoria(categoria);
+
+
+            gerenciarTodosOsProjetos.ClicarEmDeletarCategoria(categoriaAdicionada);
             gerenciarTodosOsProjetos.deletarCategoria();
            
-            Assert.IsFalse(gerenciarTodosOsProjetos.acharCategoriaSelecionada("TesteCat"));
+            Assert.IsFalse(gerenciarTodosOsProjetos.acharCategoriaSelecionada(categoriaAdicionada));
 
         }
 

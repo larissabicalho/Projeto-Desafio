@@ -63,12 +63,12 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             Click(btnAdicionar);
         }
 
-        public void adicionarCategoria(string categoria)
+        public string adicionarCategoria(string categoria)
         {
             clicarEmGerenciarProjetos();
             preencherNomeCategoria(categoria);
             clicarEmAdicionarCategoria();
-
+            return categoria;
         }
 
         #endregion

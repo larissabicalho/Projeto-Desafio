@@ -38,6 +38,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="EmptyClass.cs" />
+    <Compile Remove="EmptyCSharpFile.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Resources\Resource1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -28,6 +28,8 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 
             gerenciaFlows.entrarNaPaginaDeGerencia("Larissa Bicalho's Project");
 
+            
+
             Assert.AreEqual("Informação do Site", gerenciarProjetos.VerificarTelaGerenciar());
 
         }
@@ -43,10 +45,10 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 
             marcadorFlows.inicializarUmMarcador( "Larissa Bicalho's Project");
 
-           
+            string marcador = "TesteLarissaMarcador" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
 
-             
-           gerenciarProjetos.criarMarcador(marcador, "klkepckpk");
+
+            gerenciarProjetos.criarMarcador(marcador, "klkepckpk");
 
            
 
@@ -77,10 +79,14 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 
             marcadorFlows.inicializarUmMarcador("Larissa Bicalho's Project");
 
+            string marcador = "TesteLarissaMarcador" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
 
-            gerenciarProjetos.atualizarMarcador(marcador, "lowran.elias", "-Edit");
+            string marcadorFeito = gerenciarProjetos.criarMarcador(marcador,"nnnnnnn");
 
-            Assert.AreEqual ("Detalhes do marcador: Teste Larissa", gerenciarProjetos.verificarSeAtualizouMarcador(marcador));
+
+            gerenciarProjetos.atualizarMarcador(marcadorFeito, "lowran.elias", "-Edit");
+
+            Assert.AreEqual ("Detalhes do marcador: "+ marcadorFeito +"", gerenciarProjetos.verificarSeAtualizouMarcador(marcador));
 
         }
 
@@ -92,9 +98,15 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             gerenciarProjetos = new GerenciarProjetos();
 
             marcadorFlows.inicializarUmMarcador("Larissa Bicalho's Project");
-            gerenciarProjetos.apagarMarcador(marcador);
 
-            Assert.IsFalse(gerenciarProjetos.pesquisarMarcadorNaLista(marcador));
+            string marcador = "TesteLarissaMarcador" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+
+            string marcadorFeito = gerenciarProjetos.criarMarcador(marcador, "nnnnnnn");
+
+
+            gerenciarProjetos.apagarMarcador(marcadorFeito);
+
+            Assert.IsFalse(gerenciarProjetos.pesquisarMarcadorNaLista(marcadorFeito));
 
         }
 
@@ -105,9 +117,11 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             gerenciarProjetos = new GerenciarProjetos();
 
             perfilGlobalFlows.inicializarUmPerfil("Larissa Bicalho's Project");
-            gerenciarProjetos.adicionarUmPerfilGlobal("PlataformaTeste","SiSTEMA","Windows10","Testando Descricao1");
+
+            string plataforma = "PlataformaTeste" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+            gerenciarProjetos.adicionarUmPerfilGlobal(plataforma,"SiSTEMA","Windows10","Testando Descricao1");
             
-            Assert.IsTrue(gerenciarProjetos.verificarSeUmPerfilFoiCriado("PlataformaTeste SiSTEMA Windows10"));
+            Assert.IsTrue(gerenciarProjetos.verificarSeUmPerfilFoiCriado(""+plataforma+" SiSTEMA Windows10"));
 
 
         }
@@ -169,9 +183,17 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             gerenciarProjetos = new GerenciarProjetos();
 
             perfilGlobalFlows.inicializarUmPerfil("Larissa Bicalho's Project");
-            gerenciarProjetos.editarPerfil("PlataformaTeste SiSTEMA Windows10", "Plataforma2Teste");
-            
-            Assert.IsTrue(gerenciarProjetos.verificarSeUmPerfilFoiCriado("Plataforma2Teste SiSTEMA Windows10"));
+
+            string plataformaAdicional = "PlataformaTeste" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+
+            gerenciarProjetos.adicionarUmPerfilGlobal(plataformaAdicional, "SiSTEMA", "Windows10", "Testando Descricao2");
+
+            string plataformaEditada = "PlataformaTeste" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+
+            gerenciarProjetos.editarPerfil("" + plataformaAdicional + " SiSTEMA Windows10", plataformaEditada);
+
+
+            Assert.IsTrue(gerenciarProjetos.verificarSeUmPerfilFoiCriado("" + plataformaEditada + " SiSTEMA Windows10"));
 
 
         }
@@ -184,9 +206,15 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             gerenciarProjetos = new GerenciarProjetos();
 
             perfilGlobalFlows.inicializarUmPerfil("Larissa Bicalho's Project");
-            gerenciarProjetos.apagarPefil("Plataforma2Teste SiSTEMA Windows10");
 
-            Assert.IsFalse(gerenciarProjetos.verificarSeUmPerfilFoiCriado("Plataforma2Teste SiSTEMA Windows10"));
+
+            string plataforma = "PlataformaTeste" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+
+            gerenciarProjetos.adicionarUmPerfilGlobal(plataforma, "SiSTEMA", "Windows10", "Testando Descricao2");
+
+            gerenciarProjetos.apagarPefil("" + plataforma +" SiSTEMA Windows10");
+
+            Assert.IsFalse(gerenciarProjetos.verificarSeUmPerfilFoiCriado("" + plataforma +" SiSTEMA Windows10"));
 
         }
 

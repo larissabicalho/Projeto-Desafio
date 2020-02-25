@@ -28,8 +28,6 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 				  "resumo", "descricao", "Passos para Reproduzir", "add",
 				  "10", "sim", "Digite os Detalhes do Relatório")]
 
-
-
 		public void TesteRelatarCasos(
 			string categoria,
             string frequencia,
