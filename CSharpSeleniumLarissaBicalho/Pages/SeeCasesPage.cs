@@ -1,4 +1,5 @@
-﻿using CSharpSeleniumLarissaBicalho.Bases;
+﻿using CSharpSeleniumExtentReportNetCoreTemplate.Helpers;
+using CSharpSeleniumLarissaBicalho.Bases;
 using CSharpSeleniumLarissaBicalho.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium;

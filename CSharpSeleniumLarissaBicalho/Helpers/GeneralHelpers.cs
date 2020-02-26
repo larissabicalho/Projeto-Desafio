@@ -11,6 +11,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.Collections.Specialized;
+using CSharpSeleniumLarissaBicalho.Helpers;
 
 namespace CSharpSeleniumExtentReportNetCoreTemplate.Helpers
 {

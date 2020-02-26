@@ -3,6 +3,7 @@ using CSharpSeleniumLarissaBicalho.Pages;
 using CSharpSeleniumLarissaBicalho.Bases;
 using NUnit.Framework;
 using CSharpSeleniumLarissaBicalho.Helpers;
+using CSharpSeleniumExtentReportNetCoreTemplate.Helpers;
 
 namespace CSharpSeleniumLarissaBicalho.Tests
 {
