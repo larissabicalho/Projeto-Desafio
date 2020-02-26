@@ -16,17 +16,15 @@ namespace CSharpSeleniumLarissaBicalho.Flows
             gerenciaFlows = new GerenciaFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-
-
         }
 
         #endregion
 
-        public void inicializarUmMarcador(string nomeProjeto)
+        public void InicializarUmMarcador(string nomeProjeto)
         {
-            gerenciaFlows.entrarNaPaginaDeGerencia(nomeProjeto);
-            gerenciarProjetos.entrarNoLinkdeGerenciarMarcadores();
-           
+            gerenciaFlows.EntrarNaPaginaDeGerencia(nomeProjeto);
+            gerenciarProjetos.EntrarNoLinkdeGerenciarMarcadores();
+
         }
     }
 }

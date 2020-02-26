@@ -35,28 +35,30 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region AdicionarAnotacao
 
-        public void clicarEmAdicionarAnotacao()
+        public void ClicarEmAdicionarAnotacao()
         {
             Click(btnAdicionarAnotacao);
         }
 
-        public void insererAnotacaoAoCaso(string anotacao)
+        public string InsererAnotacaoAoCaso(string anotacao)
         {
             SendKeys(digitarAAnotacao, anotacao);
-            clicarEmAdicionarAnotacao();
+            ClicarEmAdicionarAnotacao();
+
+            return anotacao;
 
         }
 
-        public By pageVerificarSeAAnotacaoFoiInserida(string anotacao)
+        public By PageVerificarSeAAnotacaoFoiInserida(string anotacao)
         {
             //testee
             return By.XPath($"//td[@class='bugnote-note-public' and contains(text(),'{anotacao}')]");
 
         }
 
-        public string verificarSeAAnotaçãoFoiInserida(string anotacao)
+        public string VerificarSeAAnotaçãoFoiInserida(string anotacao)
         {
-            return GetText(pageVerificarSeAAnotacaoFoiInserida(anotacao));
+            return GetText(PageVerificarSeAAnotacaoFoiInserida(anotacao));
         }
 
 
@@ -64,7 +66,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Alterar Anotacao 
 
-        public By btnAlterarAnotacao(string anotacao)
+        public By BtnAlterarAnotacao(string anotacao)
         {
             //teste
 
@@ -72,44 +74,45 @@ namespace CSharpSeleniumLarissaBicalho.Pages
         }
 
 
-        public void clicarEmAlterarAnotação(string anotacao)
+        public void ClicarEmAlterarAnotação(string anotacao)
         {
-            Click(btnAlterarAnotacao(anotacao));
+            Click(BtnAlterarAnotacao(anotacao));
         }
 
-        public void limparDado()
+        public void LimparDado()
         {
             driver.FindElement(textoASerAlterado).Clear();
         }
 
-        public void preencherAnotacaoEditada(string anotacao)
+        public void PreencherAnotacaoEditada(string anotacao)
         {
             SendKeys(textoASerAlterado, anotacao);
         }
 
-        public void clicarNoBotaoDeAtualizarAnotacao()
+        public void ClicarNoBotaoDeAtualizarAnotacao()
         {
             Click(btnAtualizarInformacao);
         }
 
 
-        public void alterarAnotacao(string anotacao, string anotacaoEditada)
+        public void AlterarAnotacao(string anotacao, string anotacaoEditada)
         {
-            clicarEmAlterarAnotação(anotacao);
-            limparDado();
-            preencherAnotacaoEditada(anotacaoEditada);
-            clicarNoBotaoDeAtualizarAnotacao();
+            ClicarEmAlterarAnotação(anotacao);
+            LimparDado();
+            PreencherAnotacaoEditada(anotacaoEditada);
+            ClicarNoBotaoDeAtualizarAnotacao();
 
         }
 
-        public void clicarEmVoltar()
+        public void ClicarEmVoltar()
         {
             Click(lnkVoltar);
         }
+
         public void entraremAlterarAnotacaoSemAlterar(string anotacao)
         {
-            clicarEmAlterarAnotação(anotacao);
-            clicarEmVoltar();
+            ClicarEmAlterarAnotação(anotacao);
+            ClicarEmVoltar();
         }
 
         #endregion
@@ -117,28 +120,28 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Apagar Anotacao
 
-        public By btnApagarUmaAnotacao(string anotacao)
+        public By BtnApagarUmaAnotacao(string anotacao)
         {
             return By.XPath($"//td[@class='bugnote-note-public' and contains(text(),'{anotacao}')]/parent::tr/td/div[@class='small']/form[2]");
         }
 
-        public void clicarEmApagarAnotacao(string anotacao)
+        public void ClicarEmApagarAnotacao(string anotacao)
         {
-            Click(btnApagarUmaAnotacao(anotacao));
+            Click(BtnApagarUmaAnotacao(anotacao));
         }
 
-        public void clicarEmConfirmarAExclusaoDaAnotacao()
+        public void ClicarEmConfirmarAExclusaoDaAnotacao()
         {
             Click(btnapagarAnotacao);
         }
 
-        public void apagarAnotacao(string anotacao)
+        public void ApagarAnotacao(string anotacao)
         {
-            clicarEmApagarAnotacao(anotacao);
-            clicarEmConfirmarAExclusaoDaAnotacao();
+            ClicarEmApagarAnotacao(anotacao);
+            ClicarEmConfirmarAExclusaoDaAnotacao();
         }
 
-        public bool confirmarSeAAnotaçãoFoiApagada(string anotacao)
+        public bool ConfirmarSeAAnotaçãoFoiApagada(string anotacao)
         {
             try
             {
@@ -159,17 +162,17 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Anotacao Privada
 
-        public By verificarOTextoAnotacaoPrivada(string anotacao)
+        public By VerificarOTextoAnotacaoPrivada(string anotacao)
         {
-            return  By.XPath($"//td[@class='bugnote-note-private' and contains(text(),'{anotacao}')]/parent::tr/td/span[contains(text(),'[ privado ]')]");
+            return By.XPath($"//td[@class='bugnote-note-private' and contains(text(),'{anotacao}')]/parent::tr/td/span[contains(text(),'[ privado ]')]");
         }
 
 
-        public bool verificarSeAAnotacaoEstaPrivada(string anotacao)
+        public bool VerificarSeAAnotacaoEstaPrivada(string anotacao)
         {
             try
             {
-                ReturnIfElementIsEnabled(verificarOTextoAnotacaoPrivada(anotacao));
+                ReturnIfElementIsEnabled(VerificarOTextoAnotacaoPrivada(anotacao));
                 return true;
             }
             catch (WebDriverException e)
@@ -178,15 +181,15 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             }
         }
 
-        public By  btnTornarUmaAnotacaoPrivada(string anotacao)
+        public By BtnTornarUmaAnotacaoPrivada(string anotacao)
         {
-            return  By.XPath($"//td[@class='bugnote-note-public' and contains(text(),'{anotacao}')]/parent::tr/td/div[@class='small']/form[3]/input[@value='Tornar Privado']");
+            return By.XPath($"//td[@class='bugnote-note-public' and contains(text(),'{anotacao}')]/parent::tr/td/div[@class='small']/form[3]/input[@value='Tornar Privado']");
         }
 
 
-        public void tornarAAnotacaoPrivada(string anotacao)
+        public void TornarAAnotacaoPrivada(string anotacao)
         {
-            Click(btnTornarUmaAnotacaoPrivada(anotacao));
+            Click(BtnTornarUmaAnotacaoPrivada(anotacao));
 
         }
 
@@ -194,12 +197,12 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Privada
 
-        public bool verificarSeAAnotacaoEstaPublica(string anotacao)
+        public bool VerificarSeAAnotacaoEstaPublica(string anotacao)
         {
             try
             {
-                WaitForElement(btnTornarUmaAnotacaoPrivada(anotacao));
-                ReturnIfElementIsEnabled(btnTornarUmaAnotacaoPrivada(anotacao));
+                WaitForElement(BtnTornarUmaAnotacaoPrivada(anotacao));
+                ReturnIfElementIsEnabled(BtnTornarUmaAnotacaoPrivada(anotacao));
                 return true;
             }
             catch (WebDriverException e)
@@ -212,15 +215,15 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Publica
 
-        public By btnTonarUmaAnotacaoPublica(string anotacao)
+        public By BtnTonarUmaAnotacaoPublica(string anotacao)
         {
             return By.XPath($"//td[@class='bugnote-note-private' and contains(text(),'{anotacao}')]/parent::tr/td/div[@class='small']/form[3]/input[@value='Tornar Público']");
         }
 
 
-        public void tornarAAnotacaoPublica(string anotacao)
+        public void TornarAAnotacaoPublica(string anotacao)
         {
-            Click(btnTonarUmaAnotacaoPublica(anotacao));
+            Click(BtnTonarUmaAnotacaoPublica(anotacao));
 
         }
 

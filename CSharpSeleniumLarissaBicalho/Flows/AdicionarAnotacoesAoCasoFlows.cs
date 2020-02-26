@@ -3,7 +3,7 @@
 
 namespace CSharpSeleniumLarissaBicalho.Flows
 {
-   public class AdicionarAnotacoesAoCasoFlows
+    public class AdicionarAnotacoesAoCasoFlows
     {
 
         MyViewPage myViewPage;
@@ -19,9 +19,9 @@ namespace CSharpSeleniumLarissaBicalho.Flows
 
         }
 
-        public void anotacoesInicio()
+        public void AnotacoesInicio()
         {
-        
+
             #region Parameters
             string usuario = "larissa.bicalho";
             string senha = "lalelu221510";
@@ -29,7 +29,7 @@ namespace CSharpSeleniumLarissaBicalho.Flows
             #endregion
 
             loginFlows.EfetuarLogin(usuario, senha);
-            myViewPage.clicaremUmCasoAtribuido(caso);
+            myViewPage.ClicaremUmCasoAtribuido(caso);
         }
 
 

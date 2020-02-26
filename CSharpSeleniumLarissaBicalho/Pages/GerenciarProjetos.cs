@@ -43,7 +43,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
         By btnEditarPerfil = By.XPath("//input[@value='Atualizar Perfil']");
         By erroMensagem = By.XPath("/html/body/div[2]/table/tbody/tr[2]/td/p");
         By comboSelecionavel = By.Name("profile_id");
-        
+
         #endregion
 
         #region Projeto
@@ -62,7 +62,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             return GetText(txtGerencia);
         }
 
-        public void entrarNoLinkdeGerenciarMarcadores()
+        public void EntrarNoLinkdeGerenciarMarcadores()
         {
             Click(linkGerenciarMarcadores);
         }
@@ -71,26 +71,26 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Marcadores
 
-        public void preencherNomeMarcador(string nome)
+        public void PreencherNomeMarcador(string nome)
         {
             SendKeys(nomeMarcador, nome);
         }
 
-        public void preencherDescricaoMarcador(string descricao)
+        public void PreencherDescricaoMarcador(string descricao)
         {
             SendKeys(descricaoMarcador, descricao);
         }
 
-        public void clicarEmCriarMarcador()
+        public void ClicarEmCriarMarcador()
         {
             Click(btnCriarMarcador);
         }
 
-        public string criarMarcador(string nome, string descricao)
+        public string CriarMarcador(string nome, string descricao)
         {
-            preencherNomeMarcador(nome);
-            preencherDescricaoMarcador(descricao);
-            clicarEmCriarMarcador();
+            PreencherNomeMarcador(nome);
+            PreencherDescricaoMarcador(descricao);
+            ClicarEmCriarMarcador();
             return nome;
         }
 
@@ -99,27 +99,27 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             return By.LinkText(nome);
         }
 
-        public bool retornaSeOMarcadorFoiCriado(string nome)
+        public bool RetornaSeOMarcadorFoiCriado(string nome)
         {
             return ReturnIfElementIsDisplayed(CreateMarcador(nome));
         }
 
-        public By marcadorASerSelecionado(string nomeMarcador)
+        public By MarcadorASerSelecionado(string nomeMarcador)
         {
             return By.LinkText(nomeMarcador);
         }
 
-        public void selecionarMarcadorCriado( string nomeMarcador)
+        public void SelecionarMarcadorCriado(string nomeMarcador)
         {
-            Click(marcadorASerSelecionado(nomeMarcador));
+            Click(MarcadorASerSelecionado(nomeMarcador));
         }
 
-        public void clicarNoBotaoAtualizarMarcador()
+        public void ClicarNoBotaoAtualizarMarcador()
         {
             Click(btnAtualizarMarcador);
         }
 
-       
+
         public void EditarUsuarioAtribuido(string atribuir)
         {
             Click(linkAlterarUsuarioAtribuido);
@@ -131,48 +131,48 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             SendKeys(descricaoMarcador, descricao);
         }
 
-        public void clicarEmAtualizarMarcador()
+        public void ClicarEmAtualizarMarcador()
         {
             Click(btnAtualizarMarcador);
         }
 
-        public void atualizarMarcador(string nomeMarcador, string atribuir, string descricao)
+        public void AtualizarMarcador(string nomeMarcador, string atribuir, string descricao)
         {
-            selecionarMarcadorCriado(nomeMarcador);
-            clicarNoBotaoAtualizarMarcador();
+            SelecionarMarcadorCriado(nomeMarcador);
+            ClicarNoBotaoAtualizarMarcador();
             EditarUsuarioAtribuido(atribuir);
-            limparDado(descricaoAdicional);
+            LimparDado(descricaoAdicional);
             EditarDescricao(descricao);
-            clicarEmAtualizarMarcador();
+            ClicarEmAtualizarMarcador();
         }
 
-        public string verificarSeAtualizouMarcador(string nomeMarcador)
+        public string VerificarSeAtualizouMarcador(string nomeMarcador)
         {
             return GetText(telaDetalhesMarcador);
 
         }
 
-        public void clicarEmApagarMarcador()
+        public void ClicarEmApagarMarcador()
         {
             Click(btnApagarMarcador);
             Click(btnApagarMarcador);
         }
 
-        public void apagarMarcador(string nomeMarcador)
+        public void ApagarMarcador(string nomeMarcador)
         {
-            selecionarMarcadorCriado(nomeMarcador);
-            clicarEmApagarMarcador();
+            SelecionarMarcadorCriado(nomeMarcador);
+            ClicarEmApagarMarcador();
 
         }
 
-        public By pesquisarMarcador(string marcador)
+        public By PesquisarMarcador(string marcador)
         {
             return By.XPath("//table[@class='width100' and @cellspacing='1']/tbody/tr[starts-with(@class,'row-')]/td[1]/a");
         }
 
-        public bool pesquisarMarcadorNaLista(string marcador)
+        public bool PesquisarMarcadorNaLista(string marcador)
         {
-            var table = driver.FindElements(pesquisarMarcador(marcador));
+            var table = driver.FindElements(PesquisarMarcador(marcador));
             //   var rows = table.FindElements(By.CssSelector("tr"));
 
             foreach (var row in table)
@@ -190,113 +190,113 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region PerfilGlobal
 
-        public void clicarEmGerenciarPerfisGlobais()
+        public void ClicarEmGerenciarPerfisGlobais()
         {
             Click(linkGerenciarPerfisGlobais);
         }
 
-        public void preencherPlataforma(string plataformaName)
+        public void PreencherPlataforma(string plataformaName)
         {
-            SendKeys(plataforma, plataformaName );
+            SendKeys(plataforma, plataformaName);
         }
-        public void preencherSO(string SOName)
+        public void PreencherSO(string SOName)
         {
             SendKeys(so, SOName);
         }
 
-        public void preencherVersaoSO(string versaoSoName)
+        public void PreencherVersaoSO(string versaoSoName)
         {
             SendKeys(versaoSO, versaoSoName);
         }
 
-        public void preencherDescricaoAdicional(string descricaoName)
+        public void PreencherDescricaoAdicional(string descricaoName)
         {
             SendKeys(descricaoAdicional, descricaoName);
         }
 
-        public void clicarEmAdicionarPerfil()
+        public void ClicarEmAdicionarPerfil()
         {
             Click(btnAdicionarPerfil);
         }
 
-        public string adicionarUmPerfilGlobal(string plataforma, string so, string versaoSO, string descricao)
-        { 
-            preencherPlataforma(plataforma);
-            preencherSO(so);
-            preencherVersaoSO(versaoSO);
-            preencherDescricaoAdicional(descricao);
-            clicarEmAdicionarPerfil();
+        public string AdicionarUmPerfilGlobal(string plataforma, string so, string versaoSO, string descricao)
+        {
+            PreencherPlataforma(plataforma);
+            PreencherSO(so);
+            PreencherVersaoSO(versaoSO);
+            PreencherDescricaoAdicional(descricao);
+            ClicarEmAdicionarPerfil();
 
             return plataforma + so + versaoSO;
 
         }
 
-        public bool verificarSeUmPerfilFoiCriado(string nomePerfil)
-        { 
+        public bool VerificarSeUmPerfilFoiCriado(string nomePerfil)
+        {
             return ReturnSelectByVisibleText(comboSelecionavel, nomePerfil);
 
         }
 
-        public string verificarMensagemdeErro()
+        public string VerificarMensagemdeErro()
         {
             return GetText(erroMensagem);
         }
 
-        public void clicarEmEditarPerfil()
+        public void ClicarEmEditarPerfil()
         {
             Click(rdeditarPerfil);
         }
 
-        public void selecionarPerfilASerEditado(string perfil)
+        public void SelecionarPerfilASerEditado(string perfil)
         {
             ComboBoxSelectByVisibleText(comboSelecionavel, perfil);
         }
 
-        public void clicarEmEnviarPerfil()
+        public void ClicarEmEnviarPerfil()
         {
             Click(btnEnviarPerfilASerEditado);
         }
 
-        public void limparDado(By dado)
+        public void LimparDado(By dado)
         {
             driver.FindElement(dado).Clear();
         }
 
-        public void clicarEmAtualizarPerfil()
+        public void ClicarEmAtualizarPerfil()
         {
             Click(btnEditarPerfil);
         }
-        public void editarPerfil(string perfil, string plataformaNome)
+        public void EditarPerfil(string perfil, string plataformaNome)
         {
-            clicarEmEditarPerfil();
-            selecionarPerfilASerEditado(perfil);
-            clicarEmEnviarPerfil();
-            limparDado(plataforma);
-            preencherPlataforma(plataformaNome);
-            clicarEmAtualizarPerfil();
-           
+            ClicarEmEditarPerfil();
+            SelecionarPerfilASerEditado(perfil);
+            ClicarEmEnviarPerfil();
+            LimparDado(plataforma);
+            PreencherPlataforma(plataformaNome);
+            ClicarEmAtualizarPerfil();
+
         }
 
-        public void clicarEmDeletarPerfil()
+        public void ClicarEmDeletarPerfil()
         {
             Click(rdapagarPerfil);
         }
 
-        public void selecionarPlataformaASerApagada(string plataformaSelecionada)
+        public void SelecionarPlataformaASerApagada(string plataformaSelecionada)
         {
             ComboBoxSelectByVisibleText(comboSelecionavel, plataformaSelecionada);
         }
 
-        public void clicarEmEnviarPlataformaaSerApagada()
+        public void ClicarEmEnviarPlataformaaSerApagada()
         {
             Click(btnEnviarPerfilASerEditado);
         }
 
-        public void apagarPefil(string plataforma)
+        public void ApagarPefil(string plataforma)
         {
-            clicarEmDeletarPerfil();
-            selecionarPlataformaASerApagada(plataforma);
-            clicarEmEnviarPerfil();
+            ClicarEmDeletarPerfil();
+            SelecionarPlataformaASerApagada(plataforma);
+            ClicarEmEnviarPerfil();
 
         }
 
@@ -305,16 +305,16 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region TrocarProjeto
 
-        public void clicarEmMudarProjeto()
+        public void ClicarEmMudarProjeto()
         {
             Click(btnMudarProjeto);
         }
 
-        public void escolherNomeProjeto(string escolherNomeProjeto)
+        public void EscolherNomeProjeto(string escolherNomeProjeto)
         {
             ComboBoxSelectByVisibleText(selecionarProjeto, escolherNomeProjeto);
-            clicarEmMudarProjeto();
-        
+            ClicarEmMudarProjeto();
+
         }
 
         #endregion

@@ -11,7 +11,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
     {
   
             [Test, TestCaseSource("GetTestData")]
-            public void criandoUmReport(
+            public void CriandoUmReport(
              string categoria,
              string frequencia,
              string gravidade,
@@ -34,7 +34,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             #endregion
 
             loginFlows.EfetuarLogin(usuario, senha);
-            reportPage.escolherProjeto("Larissa Bicalho's Project");
+            reportPage.EscolherProjeto("Larissa Bicalho's Project");
 
             reportPage.PreencherRelatarCaso(
                     categoria,
@@ -47,9 +47,9 @@ namespace CSharpSeleniumLarissaBicalho.Tests
                     continuarRelatando,
                     "Enviar Relatório");
 
-            reportPage.relatarCaso(continuarRelatando);
+            reportPage.RelatarCaso(continuarRelatando);
 
-            reportPage.clicarSair();
+            reportPage.ClicarSair();
 
 
         }

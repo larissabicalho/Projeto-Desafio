@@ -9,7 +9,8 @@ namespace CSharpSeleniumLarissaBicalho.Tests
     public class MyViewTests : TestBase
     {
         [Test]
-        public void verUmCaso()
+
+        public void VerUmCaso()
         {
             LoginFlows loginFlows = new LoginFlows();
           
@@ -22,13 +23,14 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             #endregion
 
             loginFlows.EfetuarLogin(usuario, senha);
-            myView.clicaremUmCasoAtribuido("Teste3");
-            Assert.AreEqual("Ver Detalhes do Caso [ Ir para as Anotações ]", myView.verificarTexto());
+            myView.ClicaremUmCasoAtribuido("Teste3");
+
+            Assert.AreEqual("Ver Detalhes do Caso [ Ir para as Anotações ]", myView.VerificarTexto());
         }
 
         [Test]
 
-        public void filtrarPorCasosAtribuidos()
+        public void FiltrarPorCasosAtribuidos()
         {
             LoginFlows loginFlows = new LoginFlows();
 
@@ -41,14 +43,16 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             #endregion
 
             loginFlows.EfetuarLogin(usuario, senha);
-            myView.clicarEmAtribuidos();
-            Assert.IsTrue(myView.verificarSeEntrouNoFiltro("Visualizando Casos"));           
+            myView.ClicarEmAtribuidos();
+
+            Assert.IsTrue(myView.VerificarSeEntrouNoFiltro("Visualizando Casos"));           
 
 
         }
 
         [Test]
-        public void filtrarPorCasosNaoAtribuidos()
+
+        public void FiltrarPorCasosNaoAtribuidos()
         {
             LoginFlows loginFlows = new LoginFlows();
 
@@ -61,14 +65,16 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             #endregion
 
             loginFlows.EfetuarLogin(usuario, senha);
-            myView.clicarEmNaoAtribuidos();
-            Assert.IsTrue(myView.verificarSeEntrouNoFiltro("Visualizando Casos"));
+            myView.ClicarEmNaoAtribuidos();
+
+            Assert.IsTrue(myView.VerificarSeEntrouNoFiltro("Visualizando Casos"));
 
 
         }
 
         [Test]
-        public void filtrarPorRelatadorPorMin()
+
+        public void FiltrarPorRelatadorPorMin()
         {
             LoginFlows loginFlows = new LoginFlows();
 
@@ -81,14 +87,16 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             #endregion
 
             loginFlows.EfetuarLogin(usuario, senha);
-            myView.clicarEmRelatadosPorMim();
-            Assert.IsTrue(myView.verificarSeEntrouNoFiltro("Visualizando Casos"));
+            myView.ClicarEmRelatadosPorMim();
+
+            Assert.IsTrue(myView.VerificarSeEntrouNoFiltro("Visualizando Casos"));
 
 
         }
 
         [Test]
-        public void filtrarPorResolvidos()
+
+        public void FiltrarPorResolvidos()
         {
             LoginFlows loginFlows = new LoginFlows();
 
@@ -101,14 +109,16 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             #endregion
 
             loginFlows.EfetuarLogin(usuario, senha);
-            myView.clicarEmResolvidos();
-            Assert.IsTrue(myView.verificarSeEntrouNoFiltro("Visualizando Casos"));
+            myView.ClicarEmResolvidos();
+
+            Assert.IsTrue(myView.VerificarSeEntrouNoFiltro("Visualizando Casos"));
 
 
         }
 
         [Test]
-        public void filtrarPorModificadosRecentemente()
+
+        public void FiltrarPorModificadosRecentemente()
         {
             LoginFlows loginFlows = new LoginFlows();
 
@@ -121,14 +131,15 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             #endregion
 
             loginFlows.EfetuarLogin(usuario, senha);
-            myView.clicarEmModificadosRecentemente();
-            Assert.IsTrue(myView.verificarSeEntrouNoFiltro("Visualizando Casos"));
+            myView.ClicarEmModificadosRecentemente();
+
+            Assert.IsTrue(myView.VerificarSeEntrouNoFiltro("Visualizando Casos"));
 
 
         }
 
         [Test]
-        public void filtrarPorMonitoradosPorMim()
+        public void FiltrarPorMonitoradosPorMim()
         {
             LoginFlows loginFlows = new LoginFlows();
 
@@ -141,8 +152,8 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             #endregion
 
             loginFlows.EfetuarLogin(usuario, senha);
-            myView.clicarEmMonitoradosPorMim();
-            Assert.IsTrue(myView.verificarSeEntrouNoFiltro("Visualizando Casos"));
+            myView.ClicarEmMonitoradosPorMim();
+            Assert.IsTrue(myView.VerificarSeEntrouNoFiltro("Visualizando Casos"));
         }
 
 

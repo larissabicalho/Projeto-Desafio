@@ -2,7 +2,7 @@
 using CSharpSeleniumLarissaBicalho.Bases;
 using CSharpSeleniumLarissaBicalho.Flows;
 using NUnit.Framework;
-
+using CSharpSeleniumLarissaBicalho.Helpers;
 
 namespace CSharpSeleniumLarissaBicalho.Tests
 {
@@ -12,85 +12,101 @@ namespace CSharpSeleniumLarissaBicalho.Tests
         AdicionarAnotacoesAoCasoPage adicionarAnotacoesAoCasoPage;
         AdicionarAnotacoesAoCasoFlows adicionarAnotacoesAoCasoFlows;
 
-        [Test, Order(1)]
-        public void adicionarAnotacao()
+        [Test]
+
+        public void AdicionarAnotacao()
         {
             adicionarAnotacoesAoCasoPage = new AdicionarAnotacoesAoCasoPage();
             adicionarAnotacoesAoCasoFlows = new AdicionarAnotacoesAoCasoFlows();
 
-            adicionarAnotacoesAoCasoFlows.anotacoesInicio();
-            adicionarAnotacoesAoCasoPage.insererAnotacaoAoCaso("vjosjojojojvojhhhh");
+            string descricao = "TesteLarissaDescricao" + GeneralHelpers.ReturnStringWithRandomCharacters(6);
+            adicionarAnotacoesAoCasoFlows.AnotacoesInicio();
+            adicionarAnotacoesAoCasoPage.InsererAnotacaoAoCaso(descricao);
 
-            Assert.AreEqual("vjosjojojojvojhhhh", adicionarAnotacoesAoCasoPage.verificarSeAAnotaçãoFoiInserida("vjosjojojojvoj"));
+            Assert.AreEqual(descricao, adicionarAnotacoesAoCasoPage.VerificarSeAAnotaçãoFoiInserida(descricao));
         }
 
-        [Test, Order(3)]
-        public void alterarAnotacao()
+        [Test]
+
+        public void AlterarAnotacao()
         {
             adicionarAnotacoesAoCasoPage = new AdicionarAnotacoesAoCasoPage();
             adicionarAnotacoesAoCasoFlows = new AdicionarAnotacoesAoCasoFlows();
 
-            adicionarAnotacoesAoCasoFlows.anotacoesInicio();
+            string descricao = "TesteLarissaDescricao" + GeneralHelpers.ReturnStringWithRandomCharacters(6);
+            adicionarAnotacoesAoCasoFlows.AnotacoesInicio();
+            string descricaoFeita = adicionarAnotacoesAoCasoPage.InsererAnotacaoAoCaso(descricao);
+            string descricaoAtualizada = "TesteLarissaDescricao" + GeneralHelpers.ReturnStringWithRandomCharacters(6);
+            adicionarAnotacoesAoCasoPage.AlterarAnotacao(descricaoFeita, descricaoAtualizada);
 
-            adicionarAnotacoesAoCasoPage.alterarAnotacao("vjosjojojojvoj","testee");
-
-            Assert.AreEqual("testee", adicionarAnotacoesAoCasoPage.verificarSeAAnotaçãoFoiInserida("testee"));
+            Assert.AreEqual(descricaoAtualizada, adicionarAnotacoesAoCasoPage.VerificarSeAAnotaçãoFoiInserida(descricaoAtualizada));
 
         }
 
-        [Test, Order(2)]
-        public void naoAlterarAnotacao()
+        [Test]
+
+        public void NaoAlterarAnotacao()
         {
             //clicar em voltar
             adicionarAnotacoesAoCasoPage = new AdicionarAnotacoesAoCasoPage();
             adicionarAnotacoesAoCasoFlows = new AdicionarAnotacoesAoCasoFlows();
 
-            adicionarAnotacoesAoCasoFlows.anotacoesInicio();
+            adicionarAnotacoesAoCasoFlows.AnotacoesInicio();
+            string descricao = "TesteLarissaDescricao" + GeneralHelpers.ReturnStringWithRandomCharacters(6);
+            adicionarAnotacoesAoCasoFlows.AnotacoesInicio();
+            string descricaoFeita = adicionarAnotacoesAoCasoPage.InsererAnotacaoAoCaso(descricao);
+            adicionarAnotacoesAoCasoPage.entraremAlterarAnotacaoSemAlterar(descricaoFeita);
 
-            adicionarAnotacoesAoCasoPage.entraremAlterarAnotacaoSemAlterar("vjosjojojojvoj");
-
-            Assert.AreEqual("vjosjojojojvoj", adicionarAnotacoesAoCasoPage.verificarSeAAnotaçãoFoiInserida("vjosjojojojvoj"));
+            Assert.AreEqual(descricaoFeita, adicionarAnotacoesAoCasoPage.VerificarSeAAnotaçãoFoiInserida(descricaoFeita));
 
         }
 
-        [Test, Order(4)]
-        public void apagarAnotacao()
+        [Test]
+
+        public void ApagarAnotacao()
         {
             adicionarAnotacoesAoCasoPage = new AdicionarAnotacoesAoCasoPage();
             adicionarAnotacoesAoCasoFlows = new AdicionarAnotacoesAoCasoFlows();
 
-            adicionarAnotacoesAoCasoFlows.anotacoesInicio();
-            adicionarAnotacoesAoCasoPage.apagarAnotacao("testee");
+            string descricao = "TesteLarissaDescricao" + GeneralHelpers.ReturnStringWithRandomCharacters(6);
+            adicionarAnotacoesAoCasoFlows.AnotacoesInicio();
+            string descricaoFeita = adicionarAnotacoesAoCasoPage.InsererAnotacaoAoCaso(descricao);
+            adicionarAnotacoesAoCasoPage.ApagarAnotacao(descricaoFeita);
 
-            Assert.IsFalse(adicionarAnotacoesAoCasoPage.confirmarSeAAnotaçãoFoiApagada("testee"));
+            Assert.IsFalse(adicionarAnotacoesAoCasoPage.ConfirmarSeAAnotaçãoFoiApagada(descricaoFeita));
 
         }
       
-        [Test, Order(5)]
-        public void tornarUmaAnotacaoPrivada()
+        [Test]
+
+        public void TornarUmaAnotacaoPrivada()
         {
             adicionarAnotacoesAoCasoPage = new AdicionarAnotacoesAoCasoPage();
             adicionarAnotacoesAoCasoFlows = new AdicionarAnotacoesAoCasoFlows();
 
-            adicionarAnotacoesAoCasoFlows.anotacoesInicio();
-            adicionarAnotacoesAoCasoPage.tornarAAnotacaoPrivada("testee");
+            string descricao = "TesteLarissaDescricao" + GeneralHelpers.ReturnStringWithRandomCharacters(6);
+            adicionarAnotacoesAoCasoFlows.AnotacoesInicio();
+            string descricaoFeita = adicionarAnotacoesAoCasoPage.InsererAnotacaoAoCaso(descricao);
+            adicionarAnotacoesAoCasoPage.TornarAAnotacaoPrivada(descricaoFeita);
 
-            Assert.IsTrue(adicionarAnotacoesAoCasoPage.verificarSeAAnotacaoEstaPrivada("testee"));
+            Assert.IsTrue(adicionarAnotacoesAoCasoPage.VerificarSeAAnotacaoEstaPrivada(descricaoFeita));
 
         }
 
-        [Test, Order(6)]
-        public void tornarUmaAnotacaoPublica()
+        [Test]
+
+        public void TornarUmaAnotacaoPublica()
         {
             adicionarAnotacoesAoCasoPage = new AdicionarAnotacoesAoCasoPage();
             adicionarAnotacoesAoCasoFlows = new AdicionarAnotacoesAoCasoFlows();
 
-            adicionarAnotacoesAoCasoFlows.anotacoesInicio();
-
-            adicionarAnotacoesAoCasoPage.tornarAAnotacaoPublica("testee");
-
-            
-            Assert.IsTrue(adicionarAnotacoesAoCasoPage.verificarSeAAnotacaoEstaPublica("testee"));
+            string descricao = "TesteLarissaDescricao" + GeneralHelpers.ReturnStringWithRandomCharacters(6);
+            adicionarAnotacoesAoCasoFlows.AnotacoesInicio();
+            string descricaoFeita = adicionarAnotacoesAoCasoPage.InsererAnotacaoAoCaso(descricao);
+            adicionarAnotacoesAoCasoPage.TornarAAnotacaoPrivada(descricaoFeita);
+            adicionarAnotacoesAoCasoPage.TornarAAnotacaoPublica(descricaoFeita);
+           
+            Assert.IsTrue(adicionarAnotacoesAoCasoPage.VerificarSeAAnotacaoEstaPublica("testee"));
 
         }
 

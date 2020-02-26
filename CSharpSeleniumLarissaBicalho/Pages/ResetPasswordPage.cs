@@ -23,7 +23,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         public string VerificarLostPassword()
         {
-           return GetText(txtLostPassword);
+            return GetText(txtLostPassword);
         }
 
         public string RetornarMensagemDeEmailEnviado()
@@ -52,13 +52,13 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             SendKeys(tfEmail, email);
         }
 
-       
+
         public void ClicarEmVoltarLogin()
         {
             Click(linkVoltarEmail);
         }
 
-     
+
         public void ClicarEmSubmeter()
         {
             Click(btnLoginSubmit);

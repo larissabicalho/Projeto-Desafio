@@ -15,206 +15,182 @@ namespace CSharpSeleniumLarissaBicalho.Tests
         GerenciarProjetos gerenciarProjetos;
         PerfilGlobalFlows perfilGlobalFlows;
 
-        string marcador = "TesteLarissaMarcador" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+     
 
 
         #endregion
 
         [Test]
-        public void entrarNaPaginadeGerencia()
+        public void EntrarNaPaginadeGerencia()
         {
             gerenciaFlows = new GerenciaFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-            gerenciaFlows.entrarNaPaginaDeGerencia("Larissa Bicalho's Project");
+            gerenciaFlows.EntrarNaPaginaDeGerencia("Larissa Bicalho's Project");
 
             
-
             Assert.AreEqual("Informação do Site", gerenciarProjetos.VerificarTelaGerenciar());
 
         }
 
-        [Test, Order(1)]
-        public void criarUmMarcador()
+        [Test]
+        public void CriarUmMarcador()
         {
 
             marcadorFlows = new MarcadorFlows();
             gerenciarProjetos = new GerenciarProjetos();
-          
-            
+                     
 
-            marcadorFlows.inicializarUmMarcador( "Larissa Bicalho's Project");
-
+            marcadorFlows.InicializarUmMarcador( "Larissa Bicalho's Project");
             string marcador = "TesteLarissaMarcador" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
-
-
-            gerenciarProjetos.criarMarcador(marcador, "klkepckpk");
-
-           
-
-            Assert.IsTrue(gerenciarProjetos.retornaSeOMarcadorFoiCriado(marcador));
+            gerenciarProjetos.CriarMarcador(marcador, "klkepckpk");
+          
+            Assert.IsTrue(gerenciarProjetos.RetornaSeOMarcadorFoiCriado(marcador));
           
 
         }
 
-        [Test, Order(4)]
-        public void nãoPreencherNomeMarcador()
+        [Test]
+        public void NãoPreencherNomeMarcador()
         {
             marcadorFlows = new MarcadorFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-            marcadorFlows.inicializarUmMarcador("Larissa Bicalho's Project");
-            gerenciarProjetos.criarMarcador("", "ejfojjvojvoej");
+            marcadorFlows.InicializarUmMarcador("Larissa Bicalho's Project");
+            gerenciarProjetos.CriarMarcador("", "ejfojjvojvoej");
            
-            Assert.IsFalse(gerenciarProjetos.pesquisarMarcadorNaLista("Teste Larissa"));
+            Assert.IsFalse(gerenciarProjetos.PesquisarMarcadorNaLista("Teste Larissa"));
         }
 
-        [Test, Order(2)]
+        [Test]
         
-        public void atualizarMarcador()
+        public void AtualizarMarcador()
         {
 
             marcadorFlows = new MarcadorFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-            marcadorFlows.inicializarUmMarcador("Larissa Bicalho's Project");
-
+            marcadorFlows.InicializarUmMarcador("Larissa Bicalho's Project");
             string marcador = "TesteLarissaMarcador" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+            string marcadorFeito = gerenciarProjetos.CriarMarcador(marcador,"nnnnnnn");
+            gerenciarProjetos.AtualizarMarcador(marcadorFeito, "lowran.elias", "-Edit");
 
-            string marcadorFeito = gerenciarProjetos.criarMarcador(marcador,"nnnnnnn");
-
-
-            gerenciarProjetos.atualizarMarcador(marcadorFeito, "lowran.elias", "-Edit");
-
-            Assert.AreEqual ("Detalhes do marcador: "+ marcadorFeito +"", gerenciarProjetos.verificarSeAtualizouMarcador(marcador));
+            Assert.AreEqual ("Detalhes do marcador: "+ marcadorFeito +"", gerenciarProjetos.VerificarSeAtualizouMarcador(marcador));
 
         }
 
-        [Test, Order(3)]
+        [Test]
 
-        public void apagarMarcador()
+        public void ApagarMarcador()
         {
             marcadorFlows = new MarcadorFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-            marcadorFlows.inicializarUmMarcador("Larissa Bicalho's Project");
-
+            marcadorFlows.InicializarUmMarcador("Larissa Bicalho's Project");
             string marcador = "TesteLarissaMarcador" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+            string marcadorFeito = gerenciarProjetos.CriarMarcador(marcador, "nnnnnnn");
+            gerenciarProjetos.ApagarMarcador(marcadorFeito);
 
-            string marcadorFeito = gerenciarProjetos.criarMarcador(marcador, "nnnnnnn");
-
-
-            gerenciarProjetos.apagarMarcador(marcadorFeito);
-
-            Assert.IsFalse(gerenciarProjetos.pesquisarMarcadorNaLista(marcadorFeito));
+            Assert.IsFalse(gerenciarProjetos.PesquisarMarcadorNaLista(marcadorFeito));
 
         }
 
-        [Test, Order(5)]
-         public void adicionarPerfilGlobal()
+        [Test]
+
+         public void AdicionarPerfilGlobal()
         {
             perfilGlobalFlows = new PerfilGlobalFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-            perfilGlobalFlows.inicializarUmPerfil("Larissa Bicalho's Project");
-
+            perfilGlobalFlows.InicializarUmPerfil("Larissa Bicalho's Project");
             string plataforma = "PlataformaTeste" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
-            gerenciarProjetos.adicionarUmPerfilGlobal(plataforma,"SiSTEMA","Windows10","Testando Descricao1");
+            gerenciarProjetos.AdicionarUmPerfilGlobal(plataforma,"SiSTEMA","Windows10","Testando Descricao1");
             
-            Assert.IsTrue(gerenciarProjetos.verificarSeUmPerfilFoiCriado(""+plataforma+" SiSTEMA Windows10"));
+            Assert.IsTrue(gerenciarProjetos.VerificarSeUmPerfilFoiCriado(""+plataforma+" SiSTEMA Windows10"));
 
 
         }
 
         [Test]
 
-        public void verificarErroPlataforma() {
+        public void VerificarErroPlataforma() {
 
             perfilGlobalFlows = new PerfilGlobalFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-            perfilGlobalFlows.inicializarUmPerfil("Larissa Bicalho's Project");
-            gerenciarProjetos.clicarEmAdicionarPerfil();
+            perfilGlobalFlows.InicializarUmPerfil("Larissa Bicalho's Project");
+            gerenciarProjetos.ClicarEmAdicionarPerfil();
 
-            Assert.AreEqual("Um campo necessário 'Plataforma' estava vazio. Por favor, verifique novamente suas entradas.", gerenciarProjetos.verificarMensagemdeErro());
+            Assert.AreEqual("Um campo necessário 'Plataforma' estava vazio. Por favor, verifique novamente suas entradas.", gerenciarProjetos.VerificarMensagemdeErro());
 
         }
 
         [Test]
 
-        public void verificarErroSO()
+        public void VerificarErroSO()
         {
 
             perfilGlobalFlows = new PerfilGlobalFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-            perfilGlobalFlows.inicializarUmPerfil("Larissa Bicalho's Project");
-            gerenciarProjetos.preencherPlataforma("PlataformaTeste");
-            gerenciarProjetos.clicarEmAdicionarPerfil();
+            perfilGlobalFlows.InicializarUmPerfil("Larissa Bicalho's Project");
+            gerenciarProjetos.PreencherPlataforma("PlataformaTeste");
+            gerenciarProjetos.ClicarEmAdicionarPerfil();
 
-            Assert.AreEqual("Um campo necessário 'Sistema Operacional' estava vazio. Por favor, verifique novamente suas entradas.", gerenciarProjetos.verificarMensagemdeErro());
+            Assert.AreEqual("Um campo necessário 'Sistema Operacional' estava vazio. Por favor, verifique novamente suas entradas.", gerenciarProjetos.VerificarMensagemdeErro());
 
         }
 
         [Test]
 
-        public void verificarErroVersaoSO()
+        public void VerificarErroVersaoSO()
         {
 
             perfilGlobalFlows = new PerfilGlobalFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-            perfilGlobalFlows.inicializarUmPerfil("Larissa Bicalho's Project");
-            gerenciarProjetos.preencherPlataforma("PlataformaTeste");
-            gerenciarProjetos.preencherSO("Windows");
-            gerenciarProjetos.clicarEmAdicionarPerfil();
+            perfilGlobalFlows.InicializarUmPerfil("Larissa Bicalho's Project");
+            gerenciarProjetos.PreencherPlataforma("PlataformaTeste");
+            gerenciarProjetos.PreencherSO("Windows");
+            gerenciarProjetos.ClicarEmAdicionarPerfil();
 
-            Assert.AreEqual("Um campo necessário 'Versão' estava vazio. Por favor, verifique novamente suas entradas.", gerenciarProjetos.verificarMensagemdeErro());
+            Assert.AreEqual("Um campo necessário 'Versão' estava vazio. Por favor, verifique novamente suas entradas.", gerenciarProjetos.VerificarMensagemdeErro());
 
         }
 
         
 
-        [Test, Order(6)]
+        [Test]
 
-        public void editarPerfilGlobal()
+        public void EditarPerfilGlobal()
         {
             perfilGlobalFlows = new PerfilGlobalFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-            perfilGlobalFlows.inicializarUmPerfil("Larissa Bicalho's Project");
-
+            perfilGlobalFlows.InicializarUmPerfil("Larissa Bicalho's Project");
             string plataformaAdicional = "PlataformaTeste" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
-
-            gerenciarProjetos.adicionarUmPerfilGlobal(plataformaAdicional, "SiSTEMA", "Windows10", "Testando Descricao2");
-
+            gerenciarProjetos.AdicionarUmPerfilGlobal(plataformaAdicional, "SiSTEMA", "Windows10", "Testando Descricao2");
             string plataformaEditada = "PlataformaTeste" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+            gerenciarProjetos.EditarPerfil("" + plataformaAdicional + " SiSTEMA Windows10", plataformaEditada);
 
-            gerenciarProjetos.editarPerfil("" + plataformaAdicional + " SiSTEMA Windows10", plataformaEditada);
-
-
-            Assert.IsTrue(gerenciarProjetos.verificarSeUmPerfilFoiCriado("" + plataformaEditada + " SiSTEMA Windows10"));
-
+            Assert.IsTrue(gerenciarProjetos.VerificarSeUmPerfilFoiCriado("" + plataformaEditada + " SiSTEMA Windows10"));
 
         }
 
-        [Test, Order(7)]
-        public void apagarPerfil()
+        [Test]
+
+        public void ApagarPerfil()
         {
 
             perfilGlobalFlows = new PerfilGlobalFlows();
             gerenciarProjetos = new GerenciarProjetos();
 
-            perfilGlobalFlows.inicializarUmPerfil("Larissa Bicalho's Project");
-
-
+            perfilGlobalFlows.InicializarUmPerfil("Larissa Bicalho's Project");
             string plataforma = "PlataformaTeste" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+            gerenciarProjetos.AdicionarUmPerfilGlobal(plataforma, "SiSTEMA", "Windows10", "Testando Descricao2");
+            gerenciarProjetos.ApagarPefil("" + plataforma +" SiSTEMA Windows10");
 
-            gerenciarProjetos.adicionarUmPerfilGlobal(plataforma, "SiSTEMA", "Windows10", "Testando Descricao2");
-
-            gerenciarProjetos.apagarPefil("" + plataforma +" SiSTEMA Windows10");
-
-            Assert.IsFalse(gerenciarProjetos.verificarSeUmPerfilFoiCriado("" + plataforma +" SiSTEMA Windows10"));
+            Assert.IsFalse(gerenciarProjetos.VerificarSeUmPerfilFoiCriado("" + plataforma +" SiSTEMA Windows10"));
 
         }
 

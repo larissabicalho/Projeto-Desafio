@@ -15,7 +15,8 @@ namespace CSharpSeleniumLarissaBicalho.Tests
         #endregion
 
         [Test]
-        public void fazerLogout()
+
+        public void FazerLogout()
         {
             LoginFlows loginFlows = new LoginFlows();
 
@@ -29,6 +30,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             loginFlows.EfetuarLogin(usuario, senha);
             Assert.AreEqual(usuario, mainPage.RetornaUsernameDasInformacoesDeLogin());
             mainPage.ClicarEmLogout();
+
             Assert.AreEqual("Login", mainPage.VerificarTelaLogin());
 
 

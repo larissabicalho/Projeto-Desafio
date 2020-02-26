@@ -20,54 +20,54 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Actions
 
-        public string verificarTexto()
+        public string VerificarTexto()
         {
             return GetText(form);
         }
 
-        public void clicarEmAtribuidos()
+        public void ClicarEmAtribuidos()
         {
             Click(linkAtribuidos);
         }
 
-        public void clicarEmNaoAtribuidos()
+        public void ClicarEmNaoAtribuidos()
         {
             Click(linkNaoAtribuidos);
         }
 
-        public void clicarEmRelatadosPorMim()
+        public void ClicarEmRelatadosPorMim()
         {
             Click(linkRelatadosPorMim);
         }
 
-        public void clicarEmResolvidos()
+        public void ClicarEmResolvidos()
         {
             Click(linkResolvidos);
         }
 
-        public void clicarEmModificadosRecentemente()
+        public void ClicarEmModificadosRecentemente()
         {
             Click(linkModificadosRecentemente);
         }
 
-        public void clicarEmMonitoradosPorMim()
+        public void ClicarEmMonitoradosPorMim()
         {
             Click(linkMonitoradosPorMim);
         }
 
-        public bool verificarSeEntrouNoFiltro(string texto)
+        public bool VerificarSeEntrouNoFiltro(string texto)
         {
             return driver.PageSource.Contains(texto);
         }
 
-        public By cardEscolhido(string resumo)
+        public By CardEscolhido(string resumo)
         {
             return By.XPath($".//td[@class ='left']//span[contains(text(),'{resumo}')]/parent::td[@class='left']/parent::tr/td/span/a");
         }
 
-        public void clicaremUmCasoAtribuido(string resumo)
+        public void ClicaremUmCasoAtribuido(string resumo)
         {
-            Click(cardEscolhido(resumo));
+            Click(CardEscolhido(resumo));
         }
 
 

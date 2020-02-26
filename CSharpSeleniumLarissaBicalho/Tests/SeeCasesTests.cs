@@ -15,44 +15,50 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 
 
         [Test]
-        public void visualizarUmCaso()
+
+        public void VisualizarUmCaso()
         {
             seeCasesFlows = new SeeCasesFlows();
             seeCasesPage = new SeeCasesPage();
 
-            seeCasesFlows.seeCases();
-            seeCasesPage.clicarEmUmCaso("TTTT");
+            seeCasesFlows.SeeCases();
+            seeCasesPage.ClicarEmUmCaso("TTTT");
 
-            Assert.AreEqual("Ver Detalhes do Caso [ Ir para as Anotações ]", seeCasesPage.verificarTexto());
+            Assert.AreEqual("Ver Detalhes do Caso [ Ir para as Anotações ]", seeCasesPage.VerificarTexto());
 
         }
 
         [Test]
-        public void exportandoCSV()
+
+        public void ExportandoCSV()
         {
 
             seeCasesFlows = new SeeCasesFlows();
             seeCasesPage = new SeeCasesPage();
 
-            seeCasesFlows.seeCases();
-            seeCasesPage.testeCSV();
-            Assert.IsTrue(seeCasesPage.verificarSeORegistrodeEstaNaPasta("larissa.bicalho.csv"));
+            seeCasesFlows.SeeCases();
+            seeCasesPage.TesteCSV();
+
+            Assert.IsTrue(seeCasesPage.VerificarSeORegistrodeEstaNaPasta("larissa.bicalho.csv"));
         }
 
         [Test]
-        public void exportandoXML()
+
+        public void ExportandoXML()
         {
             seeCasesFlows = new SeeCasesFlows();
             seeCasesPage = new SeeCasesPage();
 
-            seeCasesFlows.seeCases();
+            seeCasesFlows.SeeCases();
 
-            seeCasesPage.testeExcel();
+            seeCasesPage.TesteExcel();
+
             //verificar como prossegir com aquela mensagem
-            Assert.IsTrue(seeCasesPage.verificarSeORegistrodeEstaNaPasta("larissa.bicalho.xml"));
+            Assert.IsTrue(seeCasesPage.VerificarSeORegistrodeEstaNaPasta("larissa.bicalho.xml"));
         }
 
         [Test]
+
         public void Imprimir()
         {
 
@@ -60,42 +66,45 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             seeCasesPage = new SeeCasesPage();
             gerenciarProjetos = new GerenciarProjetos();
 
-            seeCasesFlows.seeCases();
+            seeCasesFlows.SeeCases();
 
-            gerenciarProjetos.escolherNomeProjeto("Larissa Bicalho's Project");
-            seeCasesPage.testeImprimirCasos();
-            Assert.AreEqual("MantisBT - Larissa Bicalho's Project", seeCasesPage.verificarSeEstaNaPaginaDeRelatorios());
+            gerenciarProjetos.EscolherNomeProjeto("Larissa Bicalho's Project");
+            seeCasesPage.TesteImprimirCasos();
+
+            Assert.AreEqual("MantisBT - Larissa Bicalho's Project", seeCasesPage.VerificarSeEstaNaPaginaDeRelatorios());
 
         }
 
         [Test]
-        public void filtraUmNumero()
+
+        public void FiltraUmNumero()
         {
 
             seeCasesFlows = new SeeCasesFlows();
             seeCasesPage = new SeeCasesPage();
             gerenciarProjetos = new GerenciarProjetos();
 
-            seeCasesFlows.seeCases();
-            gerenciarProjetos.escolherNomeProjeto("Larissa Bicalho's Project");
-            seeCasesPage.filtrarUmCaso("0003533");
+            seeCasesFlows.SeeCases();
+            gerenciarProjetos.EscolherNomeProjeto("Larissa Bicalho's Project");
+            seeCasesPage.FiltrarUmCaso("0003533");
 
-            Assert.AreEqual("0003533", seeCasesPage.verificarSeONumeroEOFiltrado("0003533"));
+            Assert.AreEqual("0003533", seeCasesPage.VerificarSeONumeroEOFiltrado("0003533"));
        
         }
 
         [Test]
-        public void copiarUmCaso()
+
+        public void CopiarUmCaso()
         {
             seeCasesFlows = new SeeCasesFlows();
             seeCasesPage = new SeeCasesPage();
             gerenciarProjetos = new GerenciarProjetos(); 
 
-            seeCasesFlows.seeCases();
+            seeCasesFlows.SeeCases();
            
-            gerenciarProjetos.escolherNomeProjeto("Larissa Bicalho's Project");
+            gerenciarProjetos.EscolherNomeProjeto("Larissa Bicalho's Project");
 
-            seeCasesPage.copiarUmCaso("Larissa Bicalho's Project", "Teste1");
+            seeCasesPage.CopiarUmCaso("Larissa Bicalho's Project", "Teste1");
         }
 
     }

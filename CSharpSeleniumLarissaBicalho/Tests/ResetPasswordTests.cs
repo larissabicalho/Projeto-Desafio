@@ -32,7 +32,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
         {
             resetPasswordPage = new ResetPasswordPage();
             resetFlows = new ResetFlows();
-            resetFlows.enviarEmailParaRecuperarASenha("larissa.bicalho", "lari_nazarebicalho@hotmail.com");
+            resetFlows.EnviarEmailParaRecuperarASenha("larissa.bicalho", "lari_nazarebicalho@hotmail.com");
 
             Assert.AreEqual("Password Message Sent", resetPasswordPage.RetornarMensagemDeEmailEnviado());
 
@@ -45,7 +45,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             resetPasswordPage = new ResetPasswordPage();
             resetFlows = new ResetFlows();
 
-            resetFlows.enviarEmailParaRecuperarASenha("", "lari_nazarebicalho@hotmail.com");
+            resetFlows.EnviarEmailParaRecuperarASenha("", "lari_nazarebicalho@hotmail.com");
 
             Assert.AreEqual("The provided information does not match any registered account!", resetPasswordPage.RetornarMensagemDeErroUserEmail());
 
@@ -59,7 +59,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             resetPasswordPage = new ResetPasswordPage();
             resetFlows = new ResetFlows();
 
-            resetFlows.enviarEmailParaRecuperarASenha("larissa.bicalho", "");
+            resetFlows.EnviarEmailParaRecuperarASenha("larissa.bicalho", "");
 
 
             Assert.AreEqual("Invalid e-mail address.", resetPasswordPage.RetornarMensagemDeErroUserEmail());
@@ -73,7 +73,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             resetPasswordPage = new ResetPasswordPage();
             resetFlows = new ResetFlows();
 
-            resetFlows.enviarEmailParaRecuperarASenha("", "");
+            resetFlows.EnviarEmailParaRecuperarASenha("", "");
 
 
             Assert.AreEqual("Invalid e-mail address.", resetPasswordPage.RetornarMensagemDeErroUserEmail());
@@ -86,7 +86,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             resetPasswordPage = new ResetPasswordPage();
             resetFlows = new ResetFlows();
 
-            resetFlows.enviarEmailParaRecuperarASenha("larissa.bica", "lari_nazarebicalho@hotmail.com");
+            resetFlows.EnviarEmailParaRecuperarASenha("larissa.bica", "lari_nazarebicalho@hotmail.com");
 
             Assert.AreEqual("The provided information does not match any registered account!", resetPasswordPage.RetornarMensagemDeErroUserEmail());
 
@@ -99,7 +99,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             resetPasswordPage = new ResetPasswordPage();
             resetFlows = new ResetFlows();
 
-            resetFlows.enviarEmailParaRecuperarASenha("larissa.bicalho", "lari_nazarebicalho@hotmail");
+            resetFlows.EnviarEmailParaRecuperarASenha("larissa.bicalho", "lari_nazarebicalho@hotmail");
 
 
             Assert.AreEqual("The provided information does not match any registered account!", resetPasswordPage.RetornarMensagemDeErroUserEmail());
@@ -113,7 +113,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             resetPasswordPage = new ResetPasswordPage();
             resetFlows = new ResetFlows();
 
-            resetFlows.enviarEmailParaRecuperarASenha("larissa.bica", "lari_nazarebicalho@hotmail");
+            resetFlows.EnviarEmailParaRecuperarASenha("larissa.bica", "lari_nazarebicalho@hotmail");
 
             Assert.AreEqual("The provided information does not match any registered account!", resetPasswordPage.RetornarMensagemDeErroUserEmail());
 

@@ -18,13 +18,12 @@ namespace CSharpSeleniumLarissaBicalho.Flows
 
         #endregion
 
-        public void inicializarUmPerfil(string nomeProjeto)
+        public void InicializarUmPerfil(string nomeProjeto)
         {
-            gerenciaFlows.entrarNaPaginaDeGerencia(nomeProjeto);
-            gerenciarProjetos.clicarEmGerenciarPerfisGlobais();
-            
-        }
+            gerenciaFlows.EntrarNaPaginaDeGerencia(nomeProjeto);
+            gerenciarProjetos.ClicarEmGerenciarPerfisGlobais();
 
+        }
 
 
     }

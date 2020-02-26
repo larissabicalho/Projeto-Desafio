@@ -7,19 +7,19 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 {
     public class GerenciarTodososProjetosPage : PageBase
 
-   {
+    {
         #region Mapping
 
         #region Gerencia
 
         By linkGerenciar = By.LinkText("Gerenciar Projetos");
-     
+
         #endregion
 
         #region Adicionar
 
-          By adicionarNomeCategoria = By.Name("name");
-          By btnAdicionar = By.XPath("//input[@value='Adicionar Categoria']");
+        By adicionarNomeCategoria = By.Name("name");
+        By btnAdicionar = By.XPath("//input[@value='Adicionar Categoria']");
 
         #endregion
 
@@ -37,7 +37,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
         #endregion
 
         #region Apagar
-         
+
         By btnApagarCategoria = By.XPath("//input[@value='Apagar Categoria']");
 
         #endregion
@@ -48,26 +48,26 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region AdicionarCategoria
 
-        public void clicarEmGerenciarProjetos()
+        public void ClicarEmGerenciarProjetos()
         {
             Click(linkGerenciar);
         }
 
-        public void preencherNomeCategoria(string nome)
+        public void PreencherNomeCategoria(string nome)
         {
             SendKeys(adicionarNomeCategoria, nome);
         }
 
-        public void clicarEmAdicionarCategoria()
+        public void ClicarEmAdicionarCategoria()
         {
             Click(btnAdicionar);
         }
 
-        public string adicionarCategoria(string categoria)
+        public string AdicionarCategoria(string categoria)
         {
-            clicarEmGerenciarProjetos();
-            preencherNomeCategoria(categoria);
-            clicarEmAdicionarCategoria();
+            ClicarEmGerenciarProjetos();
+            PreencherNomeCategoria(categoria);
+            ClicarEmAdicionarCategoria();
             return categoria;
         }
 
@@ -85,33 +85,33 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             Click(AlterarButton(categoria));
         }
 
-        public void limparNomeCategoria()
+        public void LimparNomeCategoria()
         {
             driver.FindElement(adicionarNomeCategoria).Clear();
         }
 
-        public void atribuirAUmaPessoa(string pessoa)
+        public void AtribuirAUmaPessoa(string pessoa)
         {
             ComboBoxSelectByVisibleText(atribuirCategoria, pessoa);
         }
 
-        public void clicarEmAtualizarCategoria()
+        public void ClicarEmAtualizarCategoria()
         {
             Click(btnEditarCategoria);
         }
 
-        public void clicarEmProsseguirEdicao()
+        public void ClicarEmProsseguirEdicao()
         {
             Click(lnkProseguir);
         }
 
-        public void editarCategoria(string nomeCategoria, string pessoa)
+        public void EditarCategoria(string nomeCategoria, string pessoa)
         {
-            limparNomeCategoria();
-            preencherNomeCategoria(nomeCategoria);
-            atribuirAUmaPessoa(pessoa);
-            clicarEmAtualizarCategoria();
-            clicarEmProsseguirEdicao();
+            LimparNomeCategoria();
+            PreencherNomeCategoria(nomeCategoria);
+            AtribuirAUmaPessoa(pessoa);
+            ClicarEmAtualizarCategoria();
+            ClicarEmProsseguirEdicao();
 
         }
 
@@ -129,15 +129,15 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             Click(DeletarButton(categoria));
         }
 
-        public void clicarEmApagarCategoria()
+        public void ClicarEmApagarCategoria()
         {
             Click(btnApagarCategoria);
         }
 
-        public void deletarCategoria()
-        { 
-            clicarEmApagarCategoria();
-            clicarEmProsseguirEdicao();
+        public void DeletarCategoria()
+        {
+            ClicarEmApagarCategoria();
+            ClicarEmProsseguirEdicao();
 
         }
 
@@ -145,17 +145,17 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Procurar
 
-        private By procurarCategoria(string categoria)
+        private By ProcurarCategoria(string categoria)
         {
             return By.XPath($"//td[contains(text(), '{categoria}')]");
         }
 
-        public bool acharCategoriaSelecionada(string categoria)
+        public bool AcharCategoriaSelecionada(string categoria)
         {
             try
             {
 
-                driver.FindElement(procurarCategoria(categoria));
+                driver.FindElement(ProcurarCategoria(categoria));
                 return true;
 
             }

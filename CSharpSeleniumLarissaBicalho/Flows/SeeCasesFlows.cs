@@ -11,7 +11,7 @@ namespace CSharpSeleniumLarissaBicalho.Flows
         LoginFlows loginFlows;
         MainPage mainPage;
         SeeCasesPage seeCasesPage;
-     
+
         public SeeCasesFlows()
         {
             loginFlows = new LoginFlows();
@@ -22,9 +22,8 @@ namespace CSharpSeleniumLarissaBicalho.Flows
 
         #endregion
 
-        public void seeCases()
+        public void SeeCases()
         {
-           
 
             #region Parameters
             string usuario = "larissa.bicalho";

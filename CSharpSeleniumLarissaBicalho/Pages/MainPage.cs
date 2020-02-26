@@ -8,7 +8,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
     {
         #region Mapping
 
-        By usernameLoginInfoTextArea = By.XPath("//td[@class='login-info-left']/span[@class='italic']");       
+        By usernameLoginInfoTextArea = By.XPath("//td[@class='login-info-left']/span[@class='italic']");
         By myViewPage = By.XPath("//a[@href='/my_view_page.php']");
         By AllCases = By.XPath("//a[@href='/view_all_bug_page.php']");
         By reportIssueLink = By.XPath("//a[@href='/bug_report_page.php']");
@@ -33,7 +33,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
         {
             Click(reportIssueLink);
         }
-       
+
         public void ClicarEmVerCasos()
         {
             Click(AllCases);
@@ -76,7 +76,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         public string VerificarTelaLogin()
         {
-           return GetText(txtLogin);
+            return GetText(txtLogin);
         }
 
         #endregion

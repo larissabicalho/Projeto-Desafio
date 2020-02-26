@@ -11,21 +11,23 @@ namespace CSharpSeleniumLarissaBicalho.Tests
         GerenciaFlows gerenciaFlows;
         GerenciarTodososProjetosPage gerenciarTodosOsProjetos;
 
-        [Test, Order(1)]
-        public void adicionarCategoria()
+        [Test]
+
+        public void AdicionarCategoria()
         {
             gerenciaFlows = new GerenciaFlows();
             gerenciarTodosOsProjetos = new GerenciarTodososProjetosPage();
 
             string categoria = "TesteLarissa" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
+            gerenciaFlows.EntrarNaPaginaDeGerencia("Todos os Projetos");
+            gerenciarTodosOsProjetos.AdicionarCategoria(categoria);
 
-            gerenciaFlows.entrarNaPaginaDeGerencia("Todos os Projetos");
-            gerenciarTodosOsProjetos.adicionarCategoria(categoria);
-            Assert.IsTrue(gerenciarTodosOsProjetos.acharCategoriaSelecionada(categoria));
+            Assert.IsTrue(gerenciarTodosOsProjetos.AcharCategoriaSelecionada(categoria));
         }
 
-        [Test, Order(2)]
-        public void alterarCategoria()
+        [Test]
+
+        public void AlterarCategoria()
         {
 
 
@@ -33,46 +35,35 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             gerenciarTodosOsProjetos = new GerenciarTodososProjetosPage();
 
 
-            gerenciaFlows.entrarNaPaginaDeGerencia("Todos os Projetos");
-
-            gerenciarTodosOsProjetos.clicarEmGerenciarProjetos();
-
+            gerenciaFlows.EntrarNaPaginaDeGerencia("Todos os Projetos");
+            gerenciarTodosOsProjetos.ClicarEmGerenciarProjetos();
             string categoria = "TesteLarissa" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
-
-            string categoriaAdicionada = gerenciarTodosOsProjetos.adicionarCategoria(categoria);
-
+            string categoriaAdicionada = gerenciarTodosOsProjetos.AdicionarCategoria(categoria);
             gerenciarTodosOsProjetos.ClicarEmAlterarCategoria(categoriaAdicionada);
-
             string categoriaEditada = "TesteLarissa" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
-
-            gerenciarTodosOsProjetos.editarCategoria(categoriaEditada, "larissa.bicalho");
+            gerenciarTodosOsProjetos.EditarCategoria(categoriaEditada, "larissa.bicalho");
            
             
-            Assert.IsTrue(gerenciarTodosOsProjetos.acharCategoriaSelecionada(categoriaEditada));
+            Assert.IsTrue(gerenciarTodosOsProjetos.AcharCategoriaSelecionada(categoriaEditada));
 
         }
 
-        [Test, Order(3)]
-        public void deletarCategoria()
+        [Test]
+        public void DeletarCategoria()
         {
 
             gerenciaFlows = new GerenciaFlows();
             gerenciarTodosOsProjetos = new GerenciarTodososProjetosPage();
 
 
-            gerenciaFlows.entrarNaPaginaDeGerencia("Todos os Projetos");
-
-            gerenciarTodosOsProjetos.clicarEmGerenciarProjetos();
-
+            gerenciaFlows.EntrarNaPaginaDeGerencia("Todos os Projetos");
+            gerenciarTodosOsProjetos.ClicarEmGerenciarProjetos();
             string categoria = "TesteLarissa" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
-
-            string categoriaAdicionada = gerenciarTodosOsProjetos.adicionarCategoria(categoria);
-
-
+            string categoriaAdicionada = gerenciarTodosOsProjetos.AdicionarCategoria(categoria);
             gerenciarTodosOsProjetos.ClicarEmDeletarCategoria(categoriaAdicionada);
-            gerenciarTodosOsProjetos.deletarCategoria();
+            gerenciarTodosOsProjetos.DeletarCategoria();
            
-            Assert.IsFalse(gerenciarTodosOsProjetos.acharCategoriaSelecionada(categoriaAdicionada));
+            Assert.IsFalse(gerenciarTodosOsProjetos.AcharCategoriaSelecionada(categoriaAdicionada));
 
         }
 

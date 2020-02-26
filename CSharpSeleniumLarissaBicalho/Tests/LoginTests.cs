@@ -17,6 +17,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
         #endregion
 
         [Test]
+
         public void RealizarLoginComSucesso()
         {
             #region Parameters
@@ -28,13 +29,13 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             mainPage = new MainPage();
 
             loginFlows.EfetuarLogin(usuario, senha);
-
-      
+    
 
             Assert.AreEqual(usuario, mainPage.RetornaUsernameDasInformacoesDeLogin());
         }
 
         [Test]
+
         public void VerificarMensagemErroUsuario()
         {
             #region Parameters
@@ -53,6 +54,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
         }
 
         [Test]
+
         public void VerificarMensagemErroSenha()
         {
             #region Parameters
@@ -63,13 +65,13 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             loginFlows = new LoginFlows();
             loginPage = new LoginPage();
                       
-
             loginFlows.EfetuarLogin(usuario, senha);
 
             Assert.AreEqual("Your account may be disabled or blocked or the username/password you entered is incorrect.", loginPage.RetornaMensagemDeErro());
         }
 
         [Test]
+
         public void VerificarLoginVazio()
         {
             #region Parameters
@@ -79,7 +81,6 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 
             loginFlows = new LoginFlows();
             loginPage = new LoginPage();
-
 
             loginFlows.EfetuarLogin(usuario, senha);
 

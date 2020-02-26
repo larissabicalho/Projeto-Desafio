@@ -21,7 +21,7 @@ namespace CSharpSeleniumLarissaBicalho.Flows
         /// Metodo que retorna MARCADOR
         /// </summary>
         /// <param name="nomeProjeto"></param>
-        public void entrarNaPaginaDeGerencia(string nomeProjeto)
+        public void EntrarNaPaginaDeGerencia(string nomeProjeto)
         {
             #region Parameters
             string usuario = "larissa.bicalho";
@@ -29,7 +29,7 @@ namespace CSharpSeleniumLarissaBicalho.Flows
             #endregion
 
             loginFlows.EfetuarLogin(usuario, senha);
-            gerenciarProjetos.escolherNomeProjeto(nomeProjeto);
+            gerenciarProjetos.EscolherNomeProjeto(nomeProjeto);
             mainPage.ClicarEmGerenciar();
 
         }

@@ -1,0 +1,62 @@
+﻿<Properties StartupConfiguration="{9041BC95-204D-4F45-9067-B1D4594B139E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CSharpSeleniumLarissaBicalho/Tests/DataDriven.cs">
+    <Files>
+      <File FileName="CSharpSeleniumLarissaBicalho/Tests/DataDriven.cs" Line="87" Column="1" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Tests/GerenciarProjetosTests.cs" Line="157" Column="140" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Pages/MainPage.cs" Line="1" Column="1" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Tests/GerenciarTodosOsProjetosTests.cs" Line="59" Column="28" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Tests/MyViewTests.cs" Line="142" Column="22" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Tests/ReportCasesTest.cs" Line="1" Column="1" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Tests/ResetPasswordTests.cs" Line="116" Column="25" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Tests/SeeCasesTests.cs" Line="52" Column="28" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Pages/SeeCasesPage.cs" Line="192" Column="20" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CSharpSeleniumLarissaBicalho" expanded="True">
+            <Node name="CSharpSeleniumLarissaBicalho" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Flows" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Tests" expanded="True">
+                <Node name="DataDriven.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="CSharpSeleniumLarissaBicalho" expanded="True">
+            <Node name="CSharpSeleniumLarissaBicalho" expanded="True">
+              <Node name="CSharpSeleniumLarissaBicalho" expanded="True">
+                <Node name="Tests" expanded="True">
+                  <Node name="DataDriven" expanded="True" />
+                  <Node name="LoginTests" expanded="True" />
+                  <Node name="MainTests" expanded="True" />
+                  <Node name="MyViewTests" expanded="True" />
+                  <Node name="ReportCasesTest" expanded="True" />
+                  <Node name="ReportCasesTest" expanded="True" />
+                  <Node name="ResetPasswordTests" expanded="True" selected="True" />
+                  <Node name="SeeCasesTests" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CSharpSeleniumLarissaBicalho PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

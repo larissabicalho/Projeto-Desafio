@@ -6,7 +6,7 @@ namespace CSharpSeleniumLarissaBicalho.Flows
     public class LoginFlows
     {
         #region Page Object and Constructor
-        
+
         LoginPage loginPage;
 
         public LoginFlows()

@@ -17,7 +17,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Mensagens de Erro
         By mensagemErroTextArea = By.XPath("/html/body/div[2]/font");
-        
+
         #endregion
 
 
@@ -50,7 +50,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #endregion
 
-       #region mensagem de Erro 
+        #region mensagem de Erro 
 
         public string RetornaMensagemDeErro()
         {

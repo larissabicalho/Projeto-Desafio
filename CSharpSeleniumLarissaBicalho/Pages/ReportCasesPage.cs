@@ -3,237 +3,238 @@ using OpenQA.Selenium;
 
 namespace CSharpSeleniumLarissaBicalho.Pages
 {
-	public class ReportCasesPage : PageBase
-	{
+    public class ReportCasesPage : PageBase
+    {
 
-		#region Mapping
+        #region Mapping
 
-		#region RelatarCaso
+        #region RelatarCaso
 
-		By inputCategoria = By.Name("category_id");
-		By inputFrequencia = By.Name("reproducibility");
-		By inputGravidade = By.Name("severity");
-		By inputPrioridade = By.Name("priority");
-		By inputPerfil = By.Name("profile_id");
-		By inputResumo = By.Name("summary");
-		By inputDescricao = By.Name("description");
-		By inputPassos = By.Name("steps_to_reproduce");
-		By inputAdicionais = By.Name("additional_info");
-		By inputImage = By.Id("ufile[]");
-		By rdContinuarReportando = By.Id("report_stay");
+        By inputCategoria = By.Name("category_id");
+        By inputFrequencia = By.Name("reproducibility");
+        By inputGravidade = By.Name("severity");
+        By inputPrioridade = By.Name("priority");
+        By inputPerfil = By.Name("profile_id");
+        By inputResumo = By.Name("summary");
+        By inputDescricao = By.Name("description");
+        By inputPassos = By.Name("steps_to_reproduce");
+        By inputAdicionais = By.Name("additional_info");
+        By inputImage = By.Id("ufile[]");
+        By rdContinuarReportando = By.Id("report_stay");
 
-		#endregion
+        #endregion
 
-		#region Selecionar Projeto 
+        #region Selecionar Projeto 
 
-		By lnkRelatarCaso = By.LinkText("Relatar Caso");
-		By cmbEscolherProjeto = By.XPath("//tr[2]/td[2]/select");
-		By projetoSelecionado  = By.XPath("//input[@value='Selecionar Projeto']");
+        By lnkRelatarCaso = By.LinkText("Relatar Caso");
+        By cmbEscolherProjeto = By.XPath("//tr[2]/td[2]/select");
+        By projetoSelecionado = By.XPath("//input[@value='Selecionar Projeto']");
 
-		#endregion
+        #endregion
 
-		#region Relatar Mais Casos
+        #region Relatar Mais Casos
 
-		By relatarMaisCasos = By.XPath("//input[@value='Relatar Mais Casos']");
+        By relatarMaisCasos = By.XPath("//input[@value='Relatar Mais Casos']");
 
-		#endregion
+        #endregion
 
-		#region Sair 
+        #region Sair 
 
-		By lnkSair = By.LinkText("Sair");
+        By lnkSair = By.LinkText("Sair");
 
-		#endregion
+        #endregion
 
-		#endregion
+        #endregion
 
-		#region Actions
+        #region Actions
 
-		#region  Preencher Relatorio
+        #region  Preencher Relatorio
 
-		public void selecionarCategoria( string categoria)
-		{
-			ComboBoxSelectByVisibleText(inputCategoria, categoria);
-		}
+        public void SelecionarCategoria(string categoria)
+        {
+            ComboBoxSelectByVisibleText(inputCategoria, categoria);
+        }
 
-		public void selecionarFrequencia(string frequencia)
-		{
-			ComboBoxSelectByVisibleText(inputFrequencia, frequencia);
-		}
+        public void SelecionarFrequencia(string frequencia)
+        {
+            ComboBoxSelectByVisibleText(inputFrequencia, frequencia);
+        }
 
-		public void selecionarGravidade (string gravidade)
-		{
-			ComboBoxSelectByVisibleText(inputGravidade, gravidade);
-		}
+        public void SelecionarGravidade(string gravidade)
+        {
+            ComboBoxSelectByVisibleText(inputGravidade, gravidade);
+        }
 
-		public void selecionarPrioridade (string prioridade)
-		{
-			ComboBoxSelectByVisibleText(inputPrioridade, prioridade);
-		}
+        public void SelecionarPrioridade(string prioridade)
+        {
+            ComboBoxSelectByVisibleText(inputPrioridade, prioridade);
+        }
 
-		public void selecionarPerfil(string profileId)
-		{
-			ComboBoxSelectByVisibleText(inputPerfil, profileId);
-		}
+        public void SelecionarPerfil(string profileId)
+        {
+            ComboBoxSelectByVisibleText(inputPerfil, profileId);
+        }
 
-		public void preencherResumo(string resumo)
-		{
-			SendKeys(inputResumo, resumo);
-		}
+        public void PreencherResumo(string resumo)
+        {
+            SendKeys(inputResumo, resumo);
+        }
 
-		public void preencherDescricao(string descricao)
-		{
-			SendKeys(inputDescricao, descricao);
-		}
+        public void PreencherDescricao(string descricao)
+        {
+            SendKeys(inputDescricao, descricao);
+        }
 
-		public void preencherPassos(string passos)
-		{
-			SendKeys(inputPassos, passos);
-		}
+        public void PreencherPassos(string passos)
+        {
+            SendKeys(inputPassos, passos);
+        }
 
-		public void preencherDadosAdicionais(string adicionais)
-		{
-			SendKeys(inputAdicionais, adicionais);
-		}
+        public void PreencherDadosAdicionais(string adicionais)
+        {
+            SendKeys(inputAdicionais, adicionais);
+        }
 
-		public void enviarImagem(string image)
-		{
-			SendKeys(inputImage, image);
-		}
+        public void EnviarImagem(string image)
+        {
+            SendKeys(inputImage, image);
+        }
 
-		public By acharBotaoVisibilidade(string visibilidade)
-		{
-			return By.XPath($"//input[@name='view_state'][@value='{visibilidade}']");
-		}
+        public By AcharBotaoVisibilidade(string visibilidade)
+        {
+            return By.XPath($"//input[@name='view_state'][@value='{visibilidade}']");
+        }
 
-		public void clicarEmVisibilidade(string visibilidade)
-		{
-			Click(acharBotaoVisibilidade(visibilidade));
-		}
+        public void ClicarEmVisibilidade(string visibilidade)
+        {
+            Click(AcharBotaoVisibilidade(visibilidade));
+        }
 
-		public void clicarEmContinuarReportando()
-		{
-			Click(rdContinuarReportando);
-		}
+        public void ClicarEmContinuarReportando()
+        {
+            Click(rdContinuarReportando);
+        }
 
-		public By acharBotaoEnviarRelatorio(string valor)
-		{
-			return By.XPath($"//input[@value='{valor}']");
-		}
+        public By AcharBotaoEnviarRelatorio(string valor)
+        {
+            return By.XPath($"//input[@value='{valor}']");
+        }
 
-	    public void clicarEmEnviarRelatorio(string valor)
-		{
-			Click(acharBotaoEnviarRelatorio(valor));
-		}
-  
-		public void PreencherRelatarCaso(string categoria,
-		string frequencia,
-		string gravidade,
-		string prioridade,
-		string profileId,
-		string resumo,
-		string descricao,
-		string passos,
-		string adicionais,
-		string image,
-		string visibilidade,
-		string continuarRelatando,
-		string value)
-		{
-			selecionarCategoria(categoria);
-			selecionarFrequencia(frequencia);
-			selecionarGravidade(gravidade);
-			selecionarPrioridade(prioridade);
-			selecionarPerfil(profileId);
-			preencherResumo(resumo);
-			preencherDescricao(descricao);
-			preencherPassos(passos);
-			preencherDadosAdicionais(adicionais);
-			enviarImagem(image);
-			clicarEmVisibilidade(visibilidade);
+        public void ClicarEmEnviarRelatorio(string valor)
+        {
+            Click(AcharBotaoEnviarRelatorio(valor));
+        }
 
-			if (continuarRelatando.Equals("sim"))
-				clicarEmContinuarReportando();
+        public void PreencherRelatarCaso(string categoria,
+        string frequencia,
+        string gravidade,
+        string prioridade,
+        string profileId,
+        string resumo,
+        string descricao,
+        string passos,
+        string adicionais,
+        string image,
+        string visibilidade,
+        string continuarRelatando,
+        string value)
+        {
+            SelecionarCategoria(categoria);
+            SelecionarFrequencia(frequencia);
+            SelecionarGravidade(gravidade);
+            SelecionarPrioridade(prioridade);
+            SelecionarPerfil(profileId);
+            PreencherResumo(resumo);
+            PreencherDescricao(descricao);
+            PreencherPassos(passos);
+            PreencherDadosAdicionais(adicionais);
+            EnviarImagem(image);
+            ClicarEmVisibilidade(visibilidade);
 
-			clicarEmEnviarRelatorio(value);
+            if (continuarRelatando.Equals("sim"))
+                ClicarEmContinuarReportando();
 
-		}
+            ClicarEmEnviarRelatorio(value);
 
-		public void PreencherRelatarCaso(string categoria,
-		string frequencia,
-		string gravidade,
-		string prioridade,
-		string profileId,
-		string resumo,
-		string descricao,
-		string continuarRelatando,
-		string value)
-		{
+        }
 
-			selecionarCategoria(categoria);
-			selecionarFrequencia(frequencia);
-			selecionarGravidade(gravidade);
-			selecionarPrioridade(prioridade);
-			selecionarPerfil(profileId);
-			preencherResumo(resumo);
-			preencherDescricao(descricao);
+        public void PreencherRelatarCaso(string categoria,
+        string frequencia,
+        string gravidade,
+        string prioridade,
+        string profileId,
+        string resumo,
+        string descricao,
+        string continuarRelatando,
+        string value)
+        {
 
-
-			if (continuarRelatando.Equals("sim"))
-				clicarEmContinuarReportando();
-
-			clicarEmEnviarRelatorio(value);
-
-		}
-
-		#endregion
-
-		#region Escolher Projeto
-
-		public void clicarEmRelataCaso()
-		{
-			Click(lnkRelatarCaso);
-		}
-
-		public void selecionarProjeto(string nomeProjeto)
-		{
-			ComboBoxSelectByVisibleText(cmbEscolherProjeto, nomeProjeto);
-		}
-
-		public void clicarEmSelecionarProjeto()
-		{
-			Click(projetoSelecionado);
-		}
-
-		public void escolherProjeto(string nomeProjeto) {
-			clicarEmRelataCaso();
-			selecionarProjeto(nomeProjeto);
-			clicarEmSelecionarProjeto();
-		}
-
-		#endregion
+            SelecionarCategoria(categoria);
+            SelecionarFrequencia(frequencia);
+            SelecionarGravidade(gravidade);
+            SelecionarPrioridade(prioridade);
+            SelecionarPerfil(profileId);
+            PreencherResumo(resumo);
+            PreencherDescricao(descricao);
 
 
-		#region Relatar Casos
+            if (continuarRelatando.Equals("sim"))
+                ClicarEmContinuarReportando();
 
-		public void clicarEmRelatarMaisCasos()
-		{
-			Click(relatarMaisCasos);
-		}
+            ClicarEmEnviarRelatorio(value);
 
-		public void relatarCaso(string continuarRelatando)
-		{
-			if (continuarRelatando.Equals("sim"))
-				clicarEmRelatarMaisCasos();
-		}
+        }
 
-		#endregion
+        #endregion
 
-		#region Sair
+        #region Escolher Projeto
 
-		public void clicarSair()
-		{
-			Click(lnkSair);
-		}
+        public void ClicarEmRelataCaso()
+        {
+            Click(lnkRelatarCaso);
+        }
+
+        public void SelecionarProjeto(string nomeProjeto)
+        {
+            ComboBoxSelectByVisibleText(cmbEscolherProjeto, nomeProjeto);
+        }
+
+        public void ClicarEmSelecionarProjeto()
+        {
+            Click(projetoSelecionado);
+        }
+
+        public void EscolherProjeto(string nomeProjeto)
+        {
+            ClicarEmRelataCaso();
+            SelecionarProjeto(nomeProjeto);
+            ClicarEmSelecionarProjeto();
+        }
+
+        #endregion
+
+
+        #region Relatar Casos
+
+        public void ClicarEmRelatarMaisCasos()
+        {
+            Click(relatarMaisCasos);
+        }
+
+        public void RelatarCaso(string continuarRelatando)
+        {
+            if (continuarRelatando.Equals("sim"))
+                ClicarEmRelatarMaisCasos();
+        }
+
+        #endregion
+
+        #region Sair
+
+        public void ClicarSair()
+        {
+            Click(lnkSair);
+        }
 
         #endregion
 

@@ -55,18 +55,18 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Casos 
 
-        public By linkDoCaso(string resumo) //testando o card
+        public By LinkDoCaso(string resumo) //testando o card
         {
             return By.XPath($".//td[@class='left' and contains(text(),'{resumo}')]/parent::tr/td/a");
         }
 
-        public void clicarEmUmCaso(string resumo)
+        public void ClicarEmUmCaso(string resumo)
         {
-            Click(linkDoCaso(resumo));
+            Click(LinkDoCaso(resumo));
 
         }
 
-        public string verificarTexto()
+        public string VerificarTexto()
         {
             return GetText(form);
         }
@@ -76,7 +76,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Relatorios
 
-        public bool verificarSeORegistrodeEstaNaPasta(string filename)
+        public bool VerificarSeORegistrodeEstaNaPasta(string filename)
         {
 
             bool encontrado = false;
@@ -86,7 +86,7 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             while (!encontrado)
             {
 
-                bool exists = File.Exists(GeneralHelpers.GetProjectPath()  + "Documentos"+ @"\" + filename + "");
+                bool exists = File.Exists(GeneralHelpers.GetProjectPath() + "Documentos" + @"\" + filename + "");
 
                 if (exists)
                 {
@@ -108,36 +108,37 @@ namespace CSharpSeleniumLarissaBicalho.Pages
             return false;
         }
 
-       public void clicarEmCSV()
+        public void ClicarEmCSV()
         {
             Click(exportarCSV);
         }
 
-        public void testeCSV()
+        public void TesteCSV()
         {
-            clicarEmCSV();
+            ClicarEmCSV();
         }
 
-        public void clicarEmExcel()
+        public void ClicarEmExcel()
         {
-           Click(exportarExcell);
+            Click(exportarExcell);
         }
 
-        public void testeExcel()
+        public void TesteExcel()
         {
-            clicarEmExcel();
+            ClicarEmExcel();
         }
 
-        public void clicarEmImprimirRelatorios()
+        public void ClicarEmImprimirRelatorios()
         {
             Click(imprimirRelatorio);
         }
-        public void testeImprimirCasos()
+
+        public void TesteImprimirCasos()
         {
-            clicarEmImprimirRelatorios();
+            ClicarEmImprimirRelatorios();
         }
 
-        public string verificarSeEstaNaPaginaDeRelatorios()
+        public string VerificarSeEstaNaPaginaDeRelatorios()
         {
             return GetText(paginaDeRelatorios);
         }
@@ -146,34 +147,34 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         #region Filtro 
 
-        public void inserirUmNumeroASerPesquisado(string numero)
+        public void InserirUmNumeroASerPesquisado(string numero)
         {
-         
+
             SendKeys(informaNumeroPesquisa, numero);
         }
 
-        public void clicarEmPesquisarUmFiltro()
+        public void ClicarEmPesquisarUmFiltro()
         {
             Click(pesquisar);
         }
 
-        public void filtrarUmCaso(string numero)
+        public void FiltrarUmCaso(string numero)
         {
-         
-            inserirUmNumeroASerPesquisado(numero);
-            clicarEmPesquisarUmFiltro();
+
+            InserirUmNumeroASerPesquisado(numero);
+            ClicarEmPesquisarUmFiltro();
 
         }
-         
-        public By casoASerFiltrado(string numero)
+
+        public By CasoASerFiltrado(string numero)
         {
 
             return By.XPath($"//*[@id='buglist']/tbody/tr[4]/td[4]/a[contains(text(),'{numero}' )]");
         }
 
-        public string verificarSeONumeroEOFiltrado(string numero)
+        public string VerificarSeONumeroEOFiltrado(string numero)
         {
-           return GetText(casoASerFiltrado(numero));
+            return GetText(CasoASerFiltrado(numero));
         }
 
         #endregion
@@ -181,41 +182,41 @@ namespace CSharpSeleniumLarissaBicalho.Pages
         //copiar
         #region Copiar
 
-        public By selecionarCasoASerCopiado(string resumo)
+        public By SelecionarCasoASerCopiado(string resumo)
         {
-            return  By.XPath($"//td[@class='left' and contains(text(),'{resumo}')]/parent::tr/td/input[1]");
+            return By.XPath($"//td[@class='left' and contains(text(),'{resumo}')]/parent::tr/td/input[1]");
         }
 
-        public void clicarNoCasoASerCopiado(string resumo)
+        public void ClicarNoCasoASerCopiado(string resumo)
         {
-            Click(selecionarCasoASerCopiado(resumo));
+            Click(SelecionarCasoASerCopiado(resumo));
         }
 
-        public void selecionarOpcaodoCombodeCopiarOCaso()
+        public void SelecionarOpcaodoCombodeCopiarOCaso()
         {
             ComboBoxSelectByVisibleText(seleciona, copiar);
         }
 
-        public void clicarNoBotaodeOk()
+        public void ClicarNoBotaodeOk()
         {
             Click(btnOk);
         }
 
-        public string verificarAQuantidadeDeCasos()
+        public string VerificarAQuantidadeDeCasos()
         {
             IWebElement casos = driver.FindElement(telaVisualizarCasos);
             string[] words = casos.Text.Split(' ');
             string ultimo = words[words.Length - 1].Replace(")", "");
 
-            return ultimo;        
+            return ultimo;
 
         }
 
-        public bool verificarSeUmCasoFoiCopiado(string antesDeCopia, string aposACopia)
+        public bool VerificarSeUmCasoFoiCopiado(string antesDeCopia, string aposACopia)
         {
             int visualizandoAntesdeCopia = Convert.ToInt32(antesDeCopia);
             int visualizandoDepoisdeCopia = Convert.ToInt32(aposACopia);
-            if((visualizandoAntesdeCopia + 1) == visualizandoDepoisdeCopia)
+            if ((visualizandoAntesdeCopia + 1) == visualizandoDepoisdeCopia)
             {
                 return true;
             }
@@ -224,27 +225,28 @@ namespace CSharpSeleniumLarissaBicalho.Pages
 
         }
 
-        public void selecionarUmProjetoASerCopiado(string projeto)
+        public void SelecionarUmProjetoASerCopiado(string projeto)
         {
             ComboBoxSelectByVisibleText(selecionarProjeto, projeto);
         }
 
-        public void clicarEmCopiar()
+        public void ClicarEmCopiar()
         {
             Click(selecionarCopiarCasos);
         }
 
-        public void copiarUmCaso(string projeto, string resumo)
+        public void CopiarUmCaso(string projeto, string resumo)
         {
-            string quantidadedeCasosAntesDeCopia = verificarAQuantidadeDeCasos();
-            clicarNoCasoASerCopiado(resumo); //TTTT
-            selecionarOpcaodoCombodeCopiarOCaso();
-            clicarNoBotaodeOk();
-            selecionarUmProjetoASerCopiado(projeto); // Larissa Bicalho's Project
-            clicarEmCopiar();
+            string quantidadedeCasosAntesDeCopia = VerificarAQuantidadeDeCasos();
+            ClicarNoCasoASerCopiado(resumo); //TTTT
+            SelecionarOpcaodoCombodeCopiarOCaso();
+            ClicarNoBotaodeOk();
+            SelecionarUmProjetoASerCopiado(projeto); // Larissa Bicalho's Project
+            ClicarEmCopiar();
             WaitForElement(telaVisualizarCasos);
-            string quantidadedeCasosDepoisDeCopia = verificarAQuantidadeDeCasos();
-            Assert.IsTrue(verificarSeUmCasoFoiCopiado(quantidadedeCasosAntesDeCopia, quantidadedeCasosDepoisDeCopia));
+            string quantidadedeCasosDepoisDeCopia = VerificarAQuantidadeDeCasos();
+
+            Assert.IsTrue(VerificarSeUmCasoFoiCopiado(quantidadedeCasosAntesDeCopia, quantidadedeCasosDepoisDeCopia));
         }
 
         #endregion

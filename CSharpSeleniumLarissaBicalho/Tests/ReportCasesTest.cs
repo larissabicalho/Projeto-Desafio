@@ -52,7 +52,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 			#endregion
 
 			loginFlows.EfetuarLogin(usuario, senha);
-			reportPage.escolherProjeto("Larissa Bicalho's Project");
+			reportPage.EscolherProjeto("Larissa Bicalho's Project");
 
 		   string image = GeneralHelpers.GetProjectPath() + "base2.jpg";
 			
@@ -71,12 +71,12 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 					continuarRelatando,
 					"Enviar Relatório");
 
-			reportPage.relatarCaso(continuarRelatando);
+			reportPage.RelatarCaso(continuarRelatando);
 
 
 			Assert.True(DriverFactory.INSTANCE.PageSource.Contains(msg));
 			
-			reportPage.clicarSair();
+			reportPage.ClicarSair();
 		}
 
 		

@@ -8,9 +8,9 @@ namespace CSharpSeleniumLarissaBicalho.Flows
         LoginPage loginPage;
         ResetPasswordPage resetPasswordPage;
 
-        public void enviarEmailParaRecuperarASenha(string usuario, string email)
+        public void EnviarEmailParaRecuperarASenha(string usuario, string email)
         {
-            
+
 
             loginPage = new LoginPage();
             resetPasswordPage = new ResetPasswordPage();
