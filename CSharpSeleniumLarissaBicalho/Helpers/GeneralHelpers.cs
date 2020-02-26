@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.Collections.Specialized;
 
-namespace CSharpSeleniumLarissaBicalho.Helpers
+namespace CSharpSeleniumExtentReportNetCoreTemplate.Helpers
 {
     public class GeneralHelpers
     {

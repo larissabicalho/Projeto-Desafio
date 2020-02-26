@@ -45,14 +45,21 @@ namespace CSharpSeleniumLarissaBicalho.Helpers
 
         public static void AddTestInfo(int methodLevel, string text)
         {
-            TEST.Log(Status.Info, text);
+            if (BuilderJson.ReturnParameterAppSettings("GET_SCREENSHOT_FOR_EACH_STEP").ToString() == "true")
+            {
+                TEST.Log(Status.Pass, GeneralHelpers.GetMethodNameByLevel(methodLevel) + " || " + text, GetScreenShotMedia());
+            }
+            else
+            {
+                TEST.Log(Status.Pass, GeneralHelpers.GetMethodNameByLevel(methodLevel) + " || " + text);
+            }
         }
 
         public static MediaEntityModelProvider GetScreenShotMedia()
         {
             string screenshotPath = GetScreenshot(reportPath);
             TestContext.AddTestAttachment(screenshotPath);
-            return MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotPath).Build();
+            return MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotPath.Replace(reportPath, ".")).Build();
         }
 
         public static void AddTestResult()
