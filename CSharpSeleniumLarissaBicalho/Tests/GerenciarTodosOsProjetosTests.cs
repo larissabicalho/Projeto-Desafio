@@ -3,7 +3,6 @@ using CSharpSeleniumLarissaBicalho.Pages;
 using CSharpSeleniumLarissaBicalho.Bases;
 using NUnit.Framework;
 using CSharpSeleniumLarissaBicalho.Helpers;
-using CSharpSeleniumExtentReportNetCoreTemplate.Helpers;
 
 namespace CSharpSeleniumLarissaBicalho.Tests
 {
@@ -37,7 +36,6 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 
 
             gerenciaFlows.EntrarNaPaginaDeGerencia("Todos os Projetos");
-            gerenciarTodosOsProjetos.ClicarEmGerenciarProjetos();
             string categoria = "TesteLarissa" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
             string categoriaAdicionada = gerenciarTodosOsProjetos.AdicionarCategoria(categoria);
             gerenciarTodosOsProjetos.ClicarEmAlterarCategoria(categoriaAdicionada);
@@ -58,7 +56,6 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 
 
             gerenciaFlows.EntrarNaPaginaDeGerencia("Todos os Projetos");
-            gerenciarTodosOsProjetos.ClicarEmGerenciarProjetos();
             string categoria = "TesteLarissa" + GeneralHelpers.ReturnStringWithRandomCharacters(3);
             string categoriaAdicionada = gerenciarTodosOsProjetos.AdicionarCategoria(categoria);
             gerenciarTodosOsProjetos.ClicarEmDeletarCategoria(categoriaAdicionada);

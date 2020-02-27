@@ -3,7 +3,6 @@ using CSharpSeleniumLarissaBicalho.Bases;
 using CSharpSeleniumLarissaBicalho.Flows;
 using NUnit.Framework;
 using CSharpSeleniumLarissaBicalho.Helpers;
-using CSharpSeleniumExtentReportNetCoreTemplate.Helpers;
 
 namespace CSharpSeleniumLarissaBicalho.Tests
 {
@@ -54,7 +53,6 @@ namespace CSharpSeleniumLarissaBicalho.Tests
 
             adicionarAnotacoesAoCasoFlows.AnotacoesInicio();
             string descricao = "TesteLarissaDescricao" + GeneralHelpers.ReturnStringWithRandomCharacters(6);
-            adicionarAnotacoesAoCasoFlows.AnotacoesInicio();
             string descricaoFeita = adicionarAnotacoesAoCasoPage.InsererAnotacaoAoCaso(descricao);
             adicionarAnotacoesAoCasoPage.entraremAlterarAnotacaoSemAlterar(descricaoFeita);
 
@@ -107,7 +105,7 @@ namespace CSharpSeleniumLarissaBicalho.Tests
             adicionarAnotacoesAoCasoPage.TornarAAnotacaoPrivada(descricaoFeita);
             adicionarAnotacoesAoCasoPage.TornarAAnotacaoPublica(descricaoFeita);
            
-            Assert.IsTrue(adicionarAnotacoesAoCasoPage.VerificarSeAAnotacaoEstaPublica("testee"));
+            Assert.IsTrue(adicionarAnotacoesAoCasoPage.VerificarSeAAnotacaoEstaPublica(descricaoFeita));
 
         }
 

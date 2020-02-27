@@ -13,7 +13,7 @@ using System.Diagnostics;
 using System.Collections.Specialized;
 using CSharpSeleniumLarissaBicalho.Helpers;
 
-namespace CSharpSeleniumExtentReportNetCoreTemplate.Helpers
+namespace CSharpSeleniumLarissaBicalho.Helpers
 {
     public class GeneralHelpers
     {
