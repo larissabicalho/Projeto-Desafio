@@ -20,6 +20,19 @@ Automação Desenvolvida em C#. O sistema automatizado foi o Mantis Bug Tracker.
 - OperaDriver
 - Selenium Server
 
+## Arquitetura
+
+**Premissas de uma boa arquitetura de automação de testes:**
+*  Facilitar o desenvolvimento dos testes automatizados (reuso).
+*  Facilitar a manutenção dos testes (refatoração).
+*  Tornar o fluxo do teste o mais legível possível (fácil entendimento do que está sendo testado).
+
+**Arquitetura padrão Base2**
+
+Para facilitar o entendimento da arquitetura do projeto de testes automatizados, foi criado um fluxograma baseado nas features principais que envolvam a arquitetura conforme imagem abaixo:
+
+![alt text](https://i.imgur.com/wexOWJF.png)
+
 
 # Classes Criadas
 
