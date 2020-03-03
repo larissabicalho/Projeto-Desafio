@@ -1,0 +1,162 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28300\viewh17700\viewkind0
+\deftab720
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 # Configura\'e7\'e3o Automa\'e7\'e3o - Mantis\
+O seguinte projeto tem como objetivo praticar a automa\'e7\'e3o em linguagem C#. O sistema a ser automatizado foi o Mantis Bug Tracker.\
+\
+# Projeto Mantis\
+- Prepara\'e7\'e3o do Ambiente\
+\
+- 50 Casos de teste \
+\
+- Data Driven\
+\
+- SeleniumGrid\
+\
+- Azure DevOps\
+\
+# Ferramentas\
+\
+- Visual Studio Professional 2019\
+- ChromeDriver\
+- FirefoxDriver (gecko)\
+- OperaDriver\
+- Selenium Server\
+\
+# Classes Criadas\
+\
+| Classe | Fun\'e7\'e3o |\
+| ------ | ------ |\
+| Tests | Classe que herda valores da TestBase e cont\'e9m os casos de testes desenvolvidos |\
+| PageObjects | Classe que herda da PageBase respons\'e1vel pelo mapeamento dos elementos da tela e seus m\'e9todos|\
+| DataDriven | Classe respons\'e1vel por implementar o DataDriven |\
+| Flows | Classe onde escreve o fluxo comum aos testes |\
+| DriverFactory | Respons\'e1vel por qual navegador sera realizado a automa\'e7\'e3o e Selenium Grid |\
+| PageBase | Respons\'e1vel pela por conter fun\'e7\'f5es relacionadas \'e0s a\'e7\'f5es da p\'e1gina (click) |\
+\
+# Page Objects\
+Padr\'e3o de Projeto onde temos manipula\'e7\'e3o de Objetos atrav\'e9s de Elementos da Tabela mapeados com o tipo By.\
+\
+# Data Driven Testing\
+O Data-driven \'e9 uma estrutura de automa\'e7\'e3o de testes que armazena dados de teste em uma tabela ou no formato de planilha distribu\'edda.\
+O endere\'e7o da tabela deve ser mudado\
+\
+# Configura\'e7\'e3o Selenium Grid\
+O Selenium-Grid permite que voc\'ea execute seus testes em diferentes m\'e1quinas em diferentes navegadores em paralelo. Ou seja, executando v\'e1rios testes ao mesmo tempo em diferentes m\'e1quinas executando diferentes navegadores e sistemas operacionais. \
+\
+Baixar o arquivo do selenium server\
+```sh\
+https://www.seleniumhq.org/download/\
+```\
+Colocar o Jar em C: e abrir o CMD na pasta (Shift+Bot\'e3o Direito)\
+\
+Executar o comando via CMD\
+```sh\
+ java -jar seleniumserver.jar -role hub\
+ ```\
+Caso a porta esteja ocupada use:\
+```sh\
+ java -jar seleniumserver.jar -port 4445 -role hub\
+```\
+Acessar o servidor via navegador e verificar se o HUB est\'e1 conectado\
+```sh\
+Link http://localhost:4444/grid/console\
+```\
+\
+- Cadastro de n\'f3\
+\
+```sh\
+java -jar seleniumserver.jar -role webdriver -hub https://IPHUB:PORTA/grid/register\
+```\
+\
+Configurando o Selenium GRID - HUB com arquivo JSON (O arquivo deve estar na pasta que ir\'e1 executar o comando)\
+```sh\
+java -jar "seleniumserver.jar" -port 4444 -role hub -hubConfig HubConfig.json\
+```\
+Conte\'fado Arquivo HUBConfig.JSON\
+```sh\
+\{\
+	  "port": 4444,\
+	  "newSessionWaitTimeout": -1,\
+	  "servlets" : [],\
+	  "withoutServlets": [],\
+	  "custom": \{\},\
+	  "capabilityMatcher": "org.openqa.grid.internal.utils.DefaultCapabilityMatcher",\
+	  "registryClass": "org.openqa.grid.internal.DefaultGridRegistry",\
+	  "throwOnCapabilityNotPresent": true,\
+	  "cleanUpCycle": 5000,\
+	  "role": "hub",\
+	  "debug": false,\
+	  "browserTimeout": 0,\
+	  "timeout": 1800\
+\}\
+```\
+Configurando o Selenium GRID - N\'f3 com arquivo JSON (O arquivo deve estar na pasta que ir\'e1 executar o comando)\
+```sh\
+java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.opera.driver="operadriver.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -jar seleniumserver.jar -role node -nodeConfig NodeDefaultConfig.json \
+```\
+Conte\'fado Arquivo NodeDefaultConfig.JSON (JUNIT 3 acima)\
+```sh\
+\{\
+  "capabilities":\
+  [\
+    \{\
+      "browserName": "firefox",\
+      "marionette": true,\
+      "maxInstances": 5,\
+      "seleniumProtocol": "WebDriver"\
+    \},\
+     \{\
+      "browserName": "internet explorer",\
+      "marionette": true,\
+      "maxInstances": 5,\
+      "seleniumProtocol": "WebDriver"\
+    \},\
+    \{\
+      "browserName": "chrome",\
+      "maxInstances": 5,\
+      "seleniumProtocol": "WebDriver"\
+    \}\
+  ],\
+  "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",\
+  "maxSession": 5,\
+  "port": -1,\
+  "register": true,\
+  "registerCycle": 5000,\
+  "hub": "http://localhost:4444",\
+  "nodeStatusCheckTimeout": 5000,\
+  "nodePolling": 5000,\
+  "role": "node",\
+  "unregisterIfStillDownAfter": 60000,\
+  "downPollingLimit": 2,\
+  "debug": false,\
+  "servlets" : [],\
+  "withoutServlets": [],\
+  "custom": \{\},\
+  "browserTimeout": 0,\
+  "timeout": 1800\
+\}\
+```\
+\'c9 altamente sugerido a cria\'e7\'e3o de .bat para inicializa\'e7\'e3o do N\'f3 e do HUB.\
+\
+CONTEUDO_NO.BAT\
+```sh\
+cd C:\\chromedriver \
+java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.opera.driver="operadriver.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -jar seleniumserver.jar -role node -nodeConfig NodeDefaultConfig.json \
+```\
+CONTEUDO_HUB.BAT\
+```sh\
+cd C:\\chromedriver \
+java -jar seleniumserver.jar -role hub -hubConfig HubConfig.json\
+```\
+# Configura\'e7\'e3o do WebDriver com o RemoteWebDriver \
+Configurar via AppSettings.json a respons\'e1vel pelo NavegadorDefault e SeleniumHub.\
+\
+```\
+}

@@ -1,20 +1,21 @@
 ﻿<Properties StartupConfiguration="{9041BC95-204D-4F45-9067-B1D4594B139E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CSharpSeleniumLarissaBicalho/Helpers/BuilderJson.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CSharpSeleniumLarissaBicalho/Bases/PageBase.cs">
     <Files>
       <File FileName="CSharpSeleniumLarissaBicalho/Tests/DataDriven.cs" Line="14" Column="26" />
       <File FileName="CSharpSeleniumLarissaBicalho/Tests/GerenciarProjetosTests.cs" Line="46" Column="56" />
       <File FileName="CSharpSeleniumLarissaBicalho/Pages/MainPage.cs" Line="1" Column="1" />
-      <File FileName="CSharpSeleniumLarissaBicalho/Tests/GerenciarTodosOsProjetosTests.cs" Line="59" Column="28" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Tests/GerenciarTodosOsProjetosTests.cs" Line="41" Column="49" />
       <File FileName="CSharpSeleniumLarissaBicalho/Tests/MyViewTests.cs" Line="142" Column="22" />
       <File FileName="CSharpSeleniumLarissaBicalho/Tests/ReportCasesTest.cs" Line="57" Column="21" />
       <File FileName="CSharpSeleniumLarissaBicalho/Tests/ResetPasswordTests.cs" Line="126" Column="20" />
       <File FileName="CSharpSeleniumLarissaBicalho/Tests/SeeCasesTests.cs" Line="52" Column="28" />
-      <File FileName="CSharpSeleniumLarissaBicalho/Pages/SeeCasesPage.cs" Line="192" Column="20" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Pages/SeeCasesPage.cs" Line="90" Column="43" />
       <File FileName="CSharpSeleniumLarissaBicalho/Helpers/ExtentReportHelpers.cs" Line="51" Column="53" />
-      <File FileName="CSharpSeleniumLarissaBicalho/Helpers/GeneralHelpers.cs" Line="97" Column="1" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Helpers/GeneralHelpers.cs" Line="57" Column="56" />
       <File FileName="CSharpSeleniumLarissaBicalho/Helpers/Browsers.cs" Line="16" Column="42" />
-      <File FileName="CSharpSeleniumLarissaBicalho/Tests/AdicionarAnotacoesAoCasoTests.cs" Line="22" Column="58" />
-      <File FileName="CSharpSeleniumLarissaBicalho/Helpers/BuilderJson.cs" Line="16" Column="26" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Tests/AdicionarAnotacoesAoCasoTests.cs" Line="23" Column="67" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Helpers/BuilderJson.cs" Line="17" Column="33" />
+      <File FileName="CSharpSeleniumLarissaBicalho/Bases/PageBase.cs" Line="90" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,10 +25,11 @@
               <Node name="Dependencies" expanded="True">
                 <Node name="FrameworkReferences" expanded="True" />
               </Node>
-              <Node name="Flows" expanded="True" />
-              <Node name="Helpers" expanded="True">
-                <Node name="BuilderJson.cs" selected="True" />
+              <Node name="Bases" expanded="True">
+                <Node name="PageBase.cs" selected="True" />
               </Node>
+              <Node name="Flows" expanded="True" />
+              <Node name="Helpers" expanded="True" />
               <Node name="Pages" expanded="True" />
               <Node name="Tests" expanded="True" />
             </Node>
