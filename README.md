@@ -10,7 +10,7 @@ O seguinte projeto tem como objetivo praticar a automação em linguagem C#. O s
 
 - SeleniumGrid
 
--Azure DevOps
+- Azure DevOps
 
 # Ferramentas
 
@@ -27,8 +27,8 @@ O seguinte projeto tem como objetivo praticar a automação em linguagem C#. O s
 | ------ | ------ |
 | Tests | Classe que herda valores da TestBase e onde são feitos os testes|
 | PageObjects | Classe que herda da PageBase responsável pelo mapeamento dos elementos da tela e seus métodos|
-| DataDriven | Classe responsável por implementar o DDT |
-| Flows | Agrupa métodos em comuns |
+| DataDriven | Classe responsável por implementar o DataDriven |
+| Flows | Agrupa fluxos comuns aos testes |
 | DriverFactory | Responsável por qual navegador sera realizado a automação e Selenium Grid |
 | PageBase | Responsável pela por conter funções relacionadas às ações da página (Click, Enviar Dados...) |
 
