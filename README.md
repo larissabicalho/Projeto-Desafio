@@ -60,11 +60,8 @@ Conteúdo Arquivo HUBConfig.JSON
 
 {
 	  "port": 4444,
-	  
 	  "newSessionWaitTimeout": -1,
-	  
 	  "servlets" : [],
-	  
 	  "withoutServlets": [],
 	  "custom": {},
 	  "capabilityMatcher": "org.openqa.grid.internal.utils.DefaultCapabilityMatcher",
@@ -76,6 +73,7 @@ Conteúdo Arquivo HUBConfig.JSON
 	  "browserTimeout": 0,
 	  "timeout": 1800
 }
+
 Configurando o Selenium GRID - Nó com arquivo JSON (O arquivo deve estar na pasta que irá executar o comando)
 
 java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.opera.driver="operadriver.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -jar seleniumserver.jar -role node -nodeConfig NodeDefaultConfig.json 
