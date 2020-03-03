@@ -1,5 +1,5 @@
-# Configuração Automação - Mantis
-O seguinte projeto tem como objetivo praticar a automação em linguagem C#. O sistema a ser automatizado foi o Mantis Bug Tracker.
+# Desafio de Automação - Mantis
+Automação Desenvolvida em C#. O sistema automatizado foi o Mantis Bug Tracker.
 
 # Desafio Base2
 - Preparação do Ambiente
@@ -134,5 +134,14 @@ java -jar seleniumserver.jar -role hub -hubConfig HubConfig.json
   "HEADLESS": "false",
   "SELENIUM_HUB": "http://192.168.1.76:4444/wd/hub", //endereco do hub
 
-```
+
+# Configuração Azure DevOps
+- E necessário associar a um projeto do Git
+- Criar Uma Task com um agente Job do DotNetCore
+- Usar os Passos Restore,Build, Test e caso queria publicar o Relatório publishRelatórioExtendsReport
+- No Restore : Colocar a solucao do projeto
+- No Build: Colocar o .csproj
+- No Test: pasta onde contém as dlls do projeto
+- No Publish Report: Pasta onde contem os relatorios publicados
+
 
