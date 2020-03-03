@@ -58,6 +58,7 @@ Configurando o Selenium GRID - HUB com arquivo JSON (O arquivo deve estar na pas
 java -jar "seleniumserver.jar" -port 4444 -role hub -hubConfig HubConfig.json
 Conteúdo Arquivo HUBConfig.JSON
 
+```sh
 {
 	  "port": 4444,
 	  "newSessionWaitTimeout": -1,
@@ -73,12 +74,15 @@ Conteúdo Arquivo HUBConfig.JSON
 	  "browserTimeout": 0,
 	  "timeout": 1800
 }
+```
 
+```
 Configurando o Selenium GRID - Nó com arquivo JSON (O arquivo deve estar na pasta que irá executar o comando)
-
+```sh
 java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.opera.driver="operadriver.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -jar seleniumserver.jar -role node -nodeConfig NodeDefaultConfig.json 
+```
 Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
-
+```sh
 {
   "capabilities":
   [
@@ -118,18 +122,21 @@ Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
   "browserTimeout": 0,
   "timeout": 1800
 }
+```
 É altamente sugerido a criação de .bat para inicialização do Nó e do HUB.
 
 CONTEUDO_NO.BAT
-
+```sh
 cd C:\chromedriver 
 java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.opera.driver="operadriver.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -jar seleniumserver.jar -role node -nodeConfig NodeDefaultConfig.json 
+```
 CONTEUDO_HUB.BAT
-
+```sh
 cd C:\chromedriver 
 java -jar seleniumserver.jar -role hub -hubConfig HubConfig.json
+```
 
-- AppSettings.Json e necessário colocar o endereço do hub e mudar a opção de local para remota 
+- AppSettings.Json é necessário colocar o endereço do hub e mudar a opção de local para remota 
   "EXECUTION": "local", // remota
   "DEFAULT_TIMEOUT_IN_SECONDS": "30",
   "HEADLESS": "false",
