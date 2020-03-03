@@ -60,8 +60,11 @@ Conteúdo Arquivo HUBConfig.JSON
 
 {
 	  "port": 4444,
+	  
 	  "newSessionWaitTimeout": -1,
+	  
 	  "servlets" : [],
+	  
 	  "withoutServlets": [],
 	  "custom": {},
 	  "capabilityMatcher": "org.openqa.grid.internal.utils.DefaultCapabilityMatcher",
